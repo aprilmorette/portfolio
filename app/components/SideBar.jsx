@@ -7,7 +7,7 @@ const Sidebar = () => {
       {/* sidebar for larger screens */}
       <aside
         id="sticky-side-panel"
-        className="w-50 h-screen hidden md:flex flex-col text-xl"
+        className="w-50 h-screen flex flex-col text-xl"
         role="dialog"
         tabIndex="-1"
         aria-label="Sidebar"

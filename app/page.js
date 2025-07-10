@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Hero from "./components/Hero";
-import NavPane from "./components/SideBar";
+import SideBar from "./components/SideBar";
 import MobileMenu from "./components/MobileMenu";
 import About from "./components/About";
 import Experience from "./components/Experience";
@@ -23,28 +23,31 @@ export default function Home() {
   }, []);
 
   return (
-<>
-  <Hero />
+    <>
+      <Hero />
 
-  <div
-    className={`transition-all duration-700 fixed top-0 left-0 w-full z-50 ${
-      showNav
-        ? "opacity-100 translate-y-0"
-        : "opacity-0 -translate-y-6 pointer-events-none"
-    }`}
-  >
-    <NavPane />
-    <MobileMenu />
-  </div>
+      <main className="flex">
+        <div
+          className={`transition-all hidden md:flex duration-700 sticky top-0 left-0 h-screen w-[16rem] z-50 ${
+            showNav
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 -translate-y-6 pointer-events-none"
+          }`}
+        >
+          <SideBar />
+        </div>
 
-  {/* Site content */}
-  <section id="main-content">
-    <About />
-    <Experience />
-    <Projects />
-    <Contact />
-  </section>
-</>
+        {/* Site content */}
+        <section id="main-content" className="w-full">
+          <About />
+          <Experience />
+          <Projects />
+          <Contact />
+        </section>
+      </main>
 
+      <MobileMenu showNav={showNav} />
+
+    </>
   );
 }
