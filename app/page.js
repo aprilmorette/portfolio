@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import Hero from "./components/Hero";
-import NavPane from "./components/NavPane";
+import NavPane from "./components/SideBar";
+import MobileMenu from "./components/MobileMenu";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
@@ -33,6 +34,7 @@ export default function Home() {
     }`}
   >
     <NavPane />
+    <MobileMenu />
   </div>
 
   {/* Site content */}
