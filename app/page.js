@@ -38,7 +38,7 @@ export default function Home() {
   </div>
 
   {/* Site content */}
-  <section id="main-content" className="pt-24">
+  <section id="main-content">
     <About />
     <Experience />
     <Projects />

@@ -20,10 +20,10 @@ const MobileMenu = () => {
     <>
       <header
         id="mobile-menu"
-        className="flex justify-between bg-blue-200 md:hidden "
+        className="flex justify-between md:hidden"
       >
         {/* logo */}
-        <a href="/" className="p-2 block">
+        <a href="/" className="pt-4 pl-4 block">
           <Image
             src="/logo.svg"
             alt="April Duff logo"

@@ -7,14 +7,14 @@ const Sidebar = () => {
       {/* sidebar for larger screens */}
       <aside
         id="sticky-side-panel"
-        className="bg-amber-400 w-65 h-screen hidden md:flex flex-col"
+        className="w-50 h-screen hidden md:flex flex-col text-xl"
         role="dialog"
         tabIndex="-1"
         aria-label="Sidebar"
       >
         
         {/* logo */}
-        <a href="/" className="p-2 block">
+        <a href="/" className="pt-4 pl-4 block">
           <Image
             src="/logo.svg"
             alt="April Duff logo"
@@ -26,9 +26,10 @@ const Sidebar = () => {
         </a>
 
         {/* navigation links */}
-        <nav className="flex-col justify-center flex-grow p-3">
+
+        <nav className="flex flex-col justify-center flex-grow p-2">
           <ul
-            className="flex flex-col space-y-1"
+            className="flex flex-col flex-grow justify-evenly"
             data-hs-scrollspy="#scrollspy"
           >
             <li>
