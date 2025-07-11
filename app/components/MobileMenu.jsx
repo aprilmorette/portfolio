@@ -44,23 +44,22 @@ const MobileMenu = ({ showNav }) => {
           />
         </a>
 
-        {/* menu button for smaller screens */}
+        {/* menu toggle button for smaller screens */}
           <button id="mobile-menu-toggle" onClick={isMenuOpen ? closeMenu : openMenu} aria-label="Toggle Menu" className={`${isMenuOpen ? "open" : ""} flex items-center justify-center leading-none relative w-10 aspect-square z-50 rotate-0 transition duration-500 ease-in-out cursor-pointer`}>
           <span></span>
           <span></span>
           <span></span>
           <span></span>
         </button>
-      </header>
 
       {/* sidebar for smaller screens */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 z-40 transform transition-transform duration-500 ease-in-out ${
+        className={`fixed top-0 right-0 h-full md:hidden w-64 z-40 transform transition-transform duration-500 ease-in-out ${
           isMenuOpen ? "-translate-x-0" : "-translate-x-[-100%]"
         }`}
       >
 
-        <nav className="flex flex-col p-4" aria-label="Mobile navigation">
+        <nav className="flex flex-col flex-grow p-4" aria-label="Mobile navigation">
           <a href="#about" onClick={closeMenu}>
             About
           </a>
@@ -75,6 +74,7 @@ const MobileMenu = ({ showNav }) => {
           </a>
         </nav>
       </div>
+      </header>
     </>
   );
 };
