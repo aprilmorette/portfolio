@@ -26,14 +26,14 @@ const MobileMenu = ({ showNav }) => {
     <>
       <header
         id="mobile-menu"
-        className={`fixed top-0 left-0 w-full flex justify-between items-center z-50 transition-all duration-700 md:hidden ${
+        className={`fixed top-0 left-0 w-full flex justify-between p-4 z-50 transition-all duration-700 md:hidden ${
           showNav
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-6 pointer-events-none"
         }`}
       >
         {/* logo */}
-        <a href="/" className="pt-4 pl-4 block">
+        <a href="/" className="block">
           <Image
             src="/logo.svg"
             alt="April Duff logo"
@@ -45,25 +45,11 @@ const MobileMenu = ({ showNav }) => {
         </a>
 
         {/* menu button for smaller screens */}
-        <button
-          className="pt-4 pr-4 cursor-pointer"
-          onClick={openMenu}
-          aria-label="Open menu"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="size-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
-          </svg>
+          <button id="mobile-menu-toggle" onClick={isMenuOpen ? closeMenu : openMenu} aria-label="Toggle Menu" className={`${isMenuOpen ? "open" : ""} flex items-center justify-center leading-none relative w-10 aspect-square z-50 rotate-0 transition duration-500 ease-in-out cursor-pointer`}>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </header>
 
@@ -73,26 +59,6 @@ const MobileMenu = ({ showNav }) => {
           isMenuOpen ? "-translate-x-0" : "-translate-x-[-100%]"
         }`}
       >
-        <button
-          className="p-4 cursor-pointer"
-          onClick={closeMenu}
-          aria-label="Close menu"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="size-6 md:hidden"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18 18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
 
         <nav className="flex flex-col p-4" aria-label="Mobile navigation">
           <a href="#about" onClick={closeMenu}>

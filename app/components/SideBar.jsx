@@ -7,14 +7,14 @@ const Sidebar = () => {
       {/* sidebar for larger screens */}
       <aside
         id="sticky-side-panel"
-        className="w-50 h-screen flex flex-col text-xl"
+        className="w-55 h-screen p-4 flex flex-col text-xl"
         role="dialog"
         tabIndex="-1"
         aria-label="Sidebar"
       >
         
         {/* logo */}
-        <a href="/" className="pt-4 pl-4 block">
+        <a href="/" className="block">
           <Image
             src="/logo.svg"
             alt="April Duff logo"
@@ -32,10 +32,10 @@ const Sidebar = () => {
             className="flex flex-col flex-grow justify-evenly"
             data-hs-scrollspy="#scrollspy"
           >
-            <li>
+            <li className="">
               <a
                 href="#about"
-                className="flex items-center gap-3 py-2 px-3"
+                className="inline-flex items-center gap-3"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ const Sidebar = () => {
             <li>
               <a
                 href="#experience"
-                className="flex items-center gap-3 py-2 px-3"
+                className="inline-flex items-center gap-3"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +79,7 @@ const Sidebar = () => {
             <li>
               <a
                 href="#projects"
-                className="flex items-center gap-3 py-2 px-3"
+                className="inline-flex items-center gap-3"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +101,7 @@ const Sidebar = () => {
             <li>
               <a
                 href="#contact"
-                className="flex items-center gap-3 py-2 px-3"
+                className="inline-flex items-center gap-3"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +122,6 @@ const Sidebar = () => {
             </li>
           </ul>
         </nav>
-
       </aside>
     </>
   );
