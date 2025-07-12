@@ -35,7 +35,6 @@
   position: absolute;
   height: 0.25em;
   width: 1.9em;
-  background: black;
   border-radius: 10px;
   opacity: 1;
   left: 0;
@@ -44,14 +43,17 @@
 }
 
 #mobile-menu-toggle span:nth-child(1) {
+  background: black;
   top: 0.8em;
 }
 
 #mobile-menu-toggle span:nth-child(2), #mobile-menu-toggle span:nth-child(3) {
+  background: black;
   top: 1.4em;
 }
 
 #mobile-menu-toggle span:nth-child(4) {
+  background: black;
   top: 2em;
 }
 
@@ -62,10 +64,12 @@
 }
 
 #mobile-menu-toggle.open span:nth-child(2) {
+  background: var(--color-accent);
   transform: rotate(45deg);
 }
 
 #mobile-menu-toggle.open span:nth-child(3) {
+  background: var(--color-accent);
   transform: rotate(-45deg);
 }
 
@@ -73,4 +77,42 @@
   top: 18px;
   width: 0%;
   left: 50%;
+}
+
+.link {
+  position: relative;
+  touch-action: manipulation;
+}
+
+.link::before,
+.link::after {
+  position: absolute;
+  content: '';
+  height: 3px;
+  width: 50%;
+  background: var(--color-accent);
+  top: calc(50% + 2px);
+  transition: transform 0.3s cubic-bezier(0.5, 0.5, 0, 1);
+}
+
+.link::before {
+  left: 0;
+  transform: translateX(calc(-100% - 10px)) scaleX(0);
+  transform-origin: left;
+}
+
+.link::after {
+  right: 0;
+  transform: translateX(calc(100% + 10px)) scaleX(0);
+  transform-origin: right;
+}
+
+.link:hover::before {
+  transform: translateX(calc(-100% - 10px)) scaleX(1);
+  transform-origin: right;
+}
+
+.link:hover::after {
+  transform: translateX(calc(100% + 10px)) scaleX(1);
+  transform-origin: left;
 }

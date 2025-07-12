@@ -140,23 +140,23 @@ const MobileMenu = ({ showNav }) => {
 
           {/* sidebar for smaller screens */}
           <nav
-            className={`fixed h-screen inset-0 z-50 flex flex-col justify-center items-center gap-4 text-2xl text-foreground transition-opacity duration-300 ${
+            className={`fixed h-screen inset-0 z-50 flex flex-col justify-center text-accent items-center gap-4 text-2xl transition-opacity duration-300 ${
               isMenuOpen
-                ? "opacity-100 delay-500"
+                ? "opacity-100 delay-300"
                 : "opacity-0 pointer-events-none"
             }`}
             aria-label="Mobile navigation"
           >
-            <a href="#about" onClick={closeMenu}>
+            <a href="#about" className="link" onClick={closeMenu}>
               About
             </a>
-            <a href="#experience" onClick={closeMenu}>
+            <a href="#experience" className="link" onClick={closeMenu}>
               Experience
             </a>
-            <a href="#projects" onClick={closeMenu}>
+            <a href="#projects" className="link" onClick={closeMenu}>
               Projects
             </a>
-            <a href="#contact" onClick={closeMenu}>
+            <a href="#contact" className="link" onClick={closeMenu}>
               Contact
             </a>
           </nav>
