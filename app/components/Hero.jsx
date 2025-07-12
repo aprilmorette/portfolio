@@ -3,10 +3,10 @@ import React from "react";
 const Hero = () => {
   return (
     <section id="hero" className="h-screen w-full bg-background text-foreground flex flex-col justify-center items-center px-6">
-      <h1 className="text-5xl md:text-6xl font-body text-primary mb-4 text-center">
+      <h1 className="text-5xl md:text-6xl text-primary mb-4 text-center font-heading">
         Hi, I'm April
       </h1>
-      <p className="text-xl md:text-2xl font-heading text-accent text-center">
+      <p className="text-xl md:text-2xl font-body text-accent text-center">
         Web Development & UX Design Enthusiast
       </p>
       <a

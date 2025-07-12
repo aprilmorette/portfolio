@@ -9,13 +9,13 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 
 export default function Home() {
-  const [showNav, setShowNav] = useState(false);
+  const [showContent, setshowContent] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const heroHeight = window.innerHeight;
-      setShowNav(scrollPosition > heroHeight - 50);
+      setshowContent(scrollPosition > heroHeight - 200);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -25,14 +25,13 @@ export default function Home() {
   return (
     <>
       <Hero />
-
-      <main className="flex">
-        <div
-          className={`transition-all hidden md:flex duration-700 sticky top-0 left-0 h-screen w-[16rem] z-50 ${
-            showNav
+      <main className={`flex transition-all duration-700 ${
+            showContent
               ? "opacity-100 translate-y-0"
               : "opacity-0 -translate-y-6 pointer-events-none"
-          }`}
+            }`}>
+        <div
+          className="transition-all hidden md:flex duration-700 sticky top-0 left-0 h-screen w-[16rem] z-50"
         >
           <SideBar />
         </div>
@@ -46,7 +45,7 @@ export default function Home() {
         </section>
       </main>
 
-      <MobileMenu showNav={showNav} />
+      <MobileMenu showContent={showContent} />
 
     </>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
-const MobileMenu = ({ showNav }) => {
+const MobileMenu = ({ showContent }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const circleRef = useRef(null);
 
@@ -62,6 +62,7 @@ const MobileMenu = ({ showNav }) => {
     elem.style.setProperty("--translate-x", `0px`);
     elem.style.setProperty("--translate-y", `0px`);
     elem.style.setProperty("--scale", `1`);
+    setIsMenuOpen(false);
   };
 
   // close mobile menu when scrolling back up to Hero or resizing screen
@@ -69,7 +70,7 @@ const MobileMenu = ({ showNav }) => {
   const maybeClose = () => {
     const isNowMedium = window.innerWidth >= 768;
 
-    if ((!showNav || isNowMedium) && isMenuOpen) {
+    if ((!showContent || isNowMedium) && isMenuOpen) {
       closeMenu();
       setIsMenuOpen(false);
     }
@@ -79,14 +80,14 @@ const MobileMenu = ({ showNav }) => {
   maybeClose(); // run immediately on load
 
   return () => window.removeEventListener("resize", maybeClose);
-}, [showNav, isMenuOpen]);
+}, [showContent, isMenuOpen]);
 
   return (
     <>
       <div
         id="mobile-menu"
         className={`fixed top-0 left-0 w-full transition-all duration-700 md:hidden ${
-          showNav
+          showContent
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-6 pointer-events-none"
         }`}

@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
+:root {
+  scroll-behavior: smooth;
+}
+
 @theme { 
-  --font-heading: Cormorant_Garamond;
-  --font-body: Work_Sans;
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Work Sans', sans-serif;
 
   --color-background: #f6f7f2;
   --color-primary: #3c4f6d;
@@ -14,20 +19,16 @@
   --color-dark-hover: #2a004a;
 }
 
-/* default CSS */
-:root { 
-  --font-heading: 'Cormorant Garamond', serif;
-  --font-body: 'Work Sans', sans-serif;
-  scroll-behavior: smooth;
+h2 {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: medium;
+}
 
-  --color-background: #f6f7f2;
-  --color-primary: #3c4f6d;
-  --color-accent: #a5b5c4;
-  --color-muted: #d9d8dd;
-  --color-foreground: #0a1944;
-
-  --color-light-hover: #fcf4ff;
-  --color-dark-hover: #2a004a;
+h3 {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: medium;
 }
 
 #mobile-menu-toggle span {
