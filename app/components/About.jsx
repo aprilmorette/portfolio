@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section id="about" className="bg-background px-4 max-w-5xl mx-auto">
+    <section id="about" className="bg-background px-4 pb-10 max-w-5xl mx-auto">
       <h2 className="text-center mb-5">about me</h2>
 
       <div className="flex flex-col lg:flex-row items-center justify-around p-6 gap-5 bg-white/80 rounded-xl shadow-md">
