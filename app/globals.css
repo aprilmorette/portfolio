@@ -91,7 +91,7 @@
   height: 3px;
   width: 50%;
   background: var(--color-accent);
-  top: calc(50% + 2px);
+  top: 50%;
   transition: transform 0.3s cubic-bezier(0.5, 0.5, 0, 1);
 }
 
