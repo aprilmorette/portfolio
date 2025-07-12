@@ -20,7 +20,7 @@
   --font-body: 'Work Sans', sans-serif;
   scroll-behavior: smooth;
 
-  background: #f6f7f2;
+  --color-background: #f6f7f2;
   --color-primary: #3c4f6d;
   --color-accent: #a5b5c4;
   --color-muted: #d9d8dd;
@@ -33,8 +33,8 @@
 #mobile-menu-toggle span {
   display: block;
   position: absolute;
-  height: 0.3em;
-  width: 100%;
+  height: 0.25em;
+  width: 1.9em;
   background: black;
   border-radius: 10px;
   opacity: 1;
@@ -44,15 +44,15 @@
 }
 
 #mobile-menu-toggle span:nth-child(1) {
-  top: 0em;
-}
-
-#mobile-menu-toggle span:nth-child(2), #mobile-menu-toggle span:nth-child(3) {
   top: 0.8em;
 }
 
+#mobile-menu-toggle span:nth-child(2), #mobile-menu-toggle span:nth-child(3) {
+  top: 1.4em;
+}
+
 #mobile-menu-toggle span:nth-child(4) {
-  top: 1.6em;
+  top: 2em;
 }
 
 #mobile-menu-toggle.open span:nth-child(1) {
