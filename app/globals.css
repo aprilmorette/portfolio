@@ -22,8 +22,10 @@
 }
 
 .card {
-  background-color: var(--color-muted);
+  background-color: var(--color-surface);
   border: 1px solid var(--color-accent);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-md);
 }
 
 .btn-primary {
@@ -79,15 +81,21 @@
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
+  font-family: var(--font-body, Inter);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3,
+h4 {
   color: var(--color-primary);
   font-family: var(--font-heading);
 }
 
-h2, h3 {
-  font-weight: medium;
+h2,
+h3,
+h4 {
+  font-weight: 500;
   letter-spacing: wider;
 }
 
@@ -106,6 +114,15 @@ h3 {
   @media (width >= 64rem) {
     font-size: 2.25rem;
     line-height: var(--text-4xl--line-height);
+  }
+}
+
+h4 {
+  font-size: 1.5rem;
+  line-height: var(--text-2xl--line-height);
+  @media (width >= 64rem) {
+    font-size: 1.875rem;
+    line-height: var(--text-3xl--line-height);
   }
 }
 
@@ -222,7 +239,7 @@ nav {
   width: 50%;
   background: var(--color-accent);
   top: 50%;
-  transition: transform 0.3s cubic-bezier(0.5, 0.5, 0, 1);
+  transition: transform 0.4s cubic-bezier(0.5, 0.5, 0, 1);
 }
 #mobile-menu a::before {
   left: 0;
@@ -243,4 +260,15 @@ nav {
   background: var(--color-background);
   transform: translateX(calc(100% + 10px)) scaleX(1);
   transform-origin: left;
+}
+
+/*** skills section ***/
+#skills div {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-accent);
+  justify-content: center;
+  border-radius: 2rem;
+  text-align: center;
+  padding: 1rem 2rem;
+  box-shadow: var(--shadow-md);
 }
