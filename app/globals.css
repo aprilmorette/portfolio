@@ -1,22 +1,95 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 :root {
   scroll-behavior: smooth;
+  font-family: Inter, sans-serif;
+  background-color: #f6f7f2;
 }
 
-@theme { 
-  --font-heading: 'Cormorant Garamond', serif;
-  --font-body: 'Work Sans', sans-serif;
+@theme {
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Work Sans", sans-serif;
 
   --color-background: #f6f7f2;
+  --color-surface: #ffffff;
+  --color-foreground: #0a1944;
+  --color-muted: #d9d8dd;
+
   --color-primary: #3c4f6d;
   --color-accent: #a5b5c4;
-  --color-muted: #d9d8dd;
-  --color-foreground: #0a1944;
+  --color-hover: #d9d8dd;
+  --color-inverse: #ffffff;
+}
 
-  --color-light-hover: #fcf4ff;
-  --color-dark-hover: #2a004a;
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-primary);
+}
+
+p {
+  color: var(--color-foreground);
+}
+
+.card {
+  background-color: var(--color-muted);
+  border: 1px solid var(--color-accent);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-foreground);
+}
+
+.btn-secondary {
+  background-color: var(--color-accent);
+  color: var(--color-foreground);
+}
+
+.theme-a {
+  --color-background: #9db8b2;
+  --color-surface: #acc4ce;
+  --color-foreground: #00070a;
+  --color-muted: #597884;
+
+  --color-primary: #294552; /* background /90 */
+  --color-accent: #597884;
+  --color-hover: #acc4ce; /* text or f6f7f2 */
+  --color-inverse: #ffffff;
+}
+
+.theme-b {
+  --color-background: #f6f7f2; /* text */
+  --color-surface: #ffffff;
+  --color-foreground: #0a1944;
+  --color-muted: #d9d8dd;
+
+  --color-primary: #3c4f6d; /* background /95 */
+  --color-accent: #a5b5c4; /* text */
+  --color-hover: #d9d8dd;
+  --color-inverse: #ffffff;
+}
+
+.theme-c {
+  --color-background: #ffffff; /* text */
+  --color-surface: #dbe4ed;
+  --color-foreground: #112236;
+  --color-muted: #a3bad2;
+
+  --color-primary: #436280; /* background /90 backdrop blur */
+  --color-accent: #a3bad2; /* text */
+  --color-hover: #dbe4ed;
+  --color-inverse: #ffffff;
 }
 
 h2 {
@@ -31,8 +104,56 @@ h3 {
   font-weight: medium;
 }
 
+nav {
+  font-family: var(--font-heading);
+  letter-spacing: 0.025em;
+  font-size: 1.5rem;
+  line-height: var(--tw-leading, var(--text-2xl--line-height));
+}
+
+/*** side navigation links ***/
+#side-nav-links a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  transition: transform 0.4s ease;
+  color: var(--color-primary);
+}
+#side-nav-links a:hover {
+  transform: scale(1.1);
+  color: var(--color-accent);
+}
+/* side nav icon animation */
+#side-nav-links a svg {
+  transition: transform 0.4s ease;
+}
+#side-nav-links a:hover svg {
+  stroke: var(--color-accent);
+}
+/* underline animation on hover */
+#side-nav-links a::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+#side-nav-links a:hover::before {
+  transform: scaleX(1);
+}
+
+/*** mobile menu button ***/
 #mobile-menu-toggle span {
   display: block;
+  background: var(--color-accent);
   position: absolute;
   height: 0.25em;
   width: 1.9em;
@@ -40,80 +161,76 @@ h3 {
   opacity: 1;
   left: 0;
   transform: rotate(0deg);
-  transition: .25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
-
+/* hamburger to x transition */
 #mobile-menu-toggle span:nth-child(1) {
-  background: black;
   top: 0.8em;
 }
-
-#mobile-menu-toggle span:nth-child(2), #mobile-menu-toggle span:nth-child(3) {
-  background: black;
+#mobile-menu-toggle span:nth-child(2),
+#mobile-menu-toggle span:nth-child(3) {
   top: 1.4em;
 }
-
 #mobile-menu-toggle span:nth-child(4) {
-  background: black;
   top: 2em;
 }
-
 #mobile-menu-toggle.open span:nth-child(1) {
   top: 0.8em;
   width: 0%;
   left: 50%;
 }
-
 #mobile-menu-toggle.open span:nth-child(2) {
-  background: var(--color-accent);
   transform: rotate(45deg);
 }
-
 #mobile-menu-toggle.open span:nth-child(3) {
-  background: var(--color-accent);
   transform: rotate(-45deg);
 }
-
 #mobile-menu-toggle.open span:nth-child(4) {
   top: 18px;
   width: 0%;
   left: 50%;
 }
-
-.link {
-  position: relative;
-  touch-action: manipulation;
+#mobile-menu-toggle.open:hover span:nth-child(2), #mobile-menu-toggle.open:hover span:nth-child(3) {
+  background: var(--color-background);
 }
 
-.link::before,
-.link::after {
+/*** mobile menu nav links ***/
+#mobile-menu a {
+  position: relative;
+  touch-action: manipulation;
+  color: var(--color-accent);
+}
+/* mobile menu nav link animations */
+#mobile-menu a:hover {
+  color: var(--color-background);
+}
+#mobile-menu a::before,
+#mobile-menu a::after {
   position: absolute;
-  content: '';
+  content: "";
   height: 3px;
   width: 50%;
   background: var(--color-accent);
   top: 50%;
   transition: transform 0.3s cubic-bezier(0.5, 0.5, 0, 1);
 }
-
-.link::before {
+#mobile-menu a::before {
   left: 0;
   transform: translateX(calc(-100% - 10px)) scaleX(0);
   transform-origin: left;
 }
-
-.link::after {
+#mobile-menu a::after {
   right: 0;
   transform: translateX(calc(100% + 10px)) scaleX(0);
   transform-origin: right;
 }
-
-.link:hover::before {
+#mobile-menu a:hover::before {
+  background: var(--color-background);
   transform: translateX(calc(-100% - 10px)) scaleX(1);
   transform-origin: right;
 }
-
-.link:hover::after {
+#mobile-menu a:hover::after {
+  background: var(--color-background);
   transform: translateX(calc(100% + 10px)) scaleX(1);
   transform-origin: left;
 }

@@ -140,7 +140,7 @@ const MobileMenu = ({ showContent }) => {
           {/* sidebar for smaller screens */}
           <nav
             id="mobile-menu"
-            className={`fixed h-screen inset-0 z-50 flex flex-col justify-center items-center gap-4 text-2xl transition-opacity duration-300 ${
+            className={`fixed h-screen inset-0 z-50 flex flex-col justify-center items-center gap-4 transition-opacity duration-300 ${
               isMenuOpen
                 ? "opacity-100 delay-300"
                 : "opacity-0 pointer-events-none"
