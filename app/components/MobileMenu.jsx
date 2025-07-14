@@ -85,7 +85,6 @@ const MobileMenu = ({ showContent }) => {
   return (
     <>
       <div
-        id="mobile-menu"
         className={`fixed top-0 left-0 w-full transition-all duration-700 md:hidden ${
           showContent
             ? "opacity-100 translate-y-0"
@@ -95,7 +94,6 @@ const MobileMenu = ({ showContent }) => {
         {/* background animation for mobile menu pop up */}
         <div
           ref={circleRef}
-          id="nav-bg"
           className="fixed top-0 right-0 bg-primary rounded-full z-40 transition-transform duration-600 ease-in-out origin-top-right m-4"
           style={{
             width: "50px",
@@ -130,7 +128,7 @@ const MobileMenu = ({ showContent }) => {
               aria-label="Toggle Menu"
               className={`${
                 isMenuOpen ? "open" : ""
-              }  leading-none relative w-[2.5em] z-60 rotate-0 transition duration-500 ease-in-out cursor-pointer`}
+              } leading-none relative w-[2.5em] z-60 rotate-0 transition duration-500 ease-in-out cursor-pointer`}
             >
               <span></span>
               <span></span>
@@ -141,24 +139,25 @@ const MobileMenu = ({ showContent }) => {
 
           {/* sidebar for smaller screens */}
           <nav
-            className={`fixed h-screen inset-0 z-50 flex flex-col justify-center text-accent items-center gap-4 text-2xl transition-opacity duration-300 ${
+            id="mobile-menu"
+            className={`fixed h-screen inset-0 z-50 flex flex-col justify-center items-center gap-4 text-2xl transition-opacity duration-300 ${
               isMenuOpen
                 ? "opacity-100 delay-300"
                 : "opacity-0 pointer-events-none"
             }`}
             aria-label="Mobile navigation"
           >
-            <a href="#about" className="link" onClick={closeMenu}>
-              About
+            <a href="#about" onClick={closeMenu}>
+              about me
             </a>
-            <a href="#experience" className="link" onClick={closeMenu}>
-              Experience
+            <a href="#experience" onClick={closeMenu}>
+              experience
             </a>
-            <a href="#projects" className="link" onClick={closeMenu}>
-              Projects
+            <a href="#projects" onClick={closeMenu}>
+              projects
             </a>
-            <a href="#contact" className="link" onClick={closeMenu}>
-              Contact
+            <a href="#contact" onClick={closeMenu}>
+              contact
             </a>
           </nav>
         </div>
