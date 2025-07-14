@@ -4,43 +4,82 @@ import Image from "next/image";
 const Projects = () => {
   return (
     <section id="projects" className="px-4 pt-10 pb-15 max-w-6xl mx-auto">
-      <h2 className="text-center mb-5">projects</h2>
+      <h2 className="text-center mb-10">projects</h2>
 
-      <div className="py-12 flex flex-col gap-8 lg:gap-12">
-        {/* Card */}
-        <a
-          className="group flex"
-          href="#"
-        >
-            <img
-              className="group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out object-cover rounded-2xl"
-              src="/expensify.png"
-              alt="Expensify Project Image"
-            />
-          </a>
-
-          <div className="pt-4">
-            <h3 className="relative inline-block font-medium text-lg text-black before:absolute before:bottom-0.5 before:start-0 before:-z-1 before:w-full before:h-1 before:bg-lime-400 before:transition-transform before:origin-left before:scale-x-0 group-hover:before:scale-x-100 group-focus:before:scale-x-100">
-              Expensify
-            </h3>
-
-            <div className="mt-3 flex flex-wrap gap-2">
-              <span className="py-1.5 px-3 bg-white text-gray-600 border border-gray-200 text-xs sm:text-sm rounded-xl">
+      {/* expensify project */}
+      <div className="pb-12 flex gap-4 lg:gap-6">
+        <div className="basis-1/3 flex flex-col justify-end mb-2">
+          <div className="text-right">
+            <h3>Expensify</h3>
+            <div className="mt-3 mb-3 flex flex-wrap gap-2 justify-end">
+              <span className="card py-1.5 px-3 text-xs sm:text-sm rounded-xl">
                 JavaScript
               </span>
-              <span className="py-1.5 px-3 bg-white text-gray-600 border border-gray-200 text-xs sm:text-sm rounded-xl">
+              <span className="card py-1.5 px-3 text-xs sm:text-sm rounded-xl">
                 HTML
               </span>
-              <span className="py-1.5 px-3 bg-white text-gray-600 border border-gray-200 text-xs sm:text-sm rounded-xl">
+              <span className="card py-1.5 px-3 text-xs sm:text-sm rounded-xl">
                 CSS
               </span>
+              <span className="card py-1.5 px-3 text-xs sm:text-sm rounded-xl">
+                Asana
+              </span>
+              <span className="card py-1.5 px-3 text-xs sm:text-sm rounded-xl">
+                Webstorm
+              </span>
             </div>
+            <a className="internal-link italic">View Case Study</a>
           </div>
+        </div>
 
-
-        {/* End Card */}
+        <a className="basis-2/3" href="#">
+          <img
+            className="card"
+            src="/expensify.png"
+            alt="Expensify Project Image"
+          />
+        </a>
       </div>
-      {/* End Card Grid */}
+
+      {/* portfolio project */}
+      <div className="py-12 flex gap-4 lg:gap-6">
+        <a className="basis-2/3" href="#">
+          <img
+            className="card"
+            src="/portfolio-hero.png"
+            alt="Portoflio Project Image"
+          />
+        </a>
+        <div className="basis-1/3 flex flex-col justify-end mb-2">
+          <div>
+            <h3>Personal Portfolio</h3>
+            <div className="mt-3 mb-3 flex flex-wrap gap-2">
+              <span className="card py-1.5 px-3 text-xs sm:text-sm rounded-xl">
+                JavaScript
+              </span>
+              <span className="card py-1.5 px-3 text-xs sm:text-sm rounded-xl">
+                HTML
+              </span>
+              <span className="card py-1.5 px-3 text-xs sm:text-sm rounded-xl">
+                TailwindCSS
+              </span>
+              <span className="card py-1.5 px-3 text-xs sm:text-sm rounded-xl">
+                React
+              </span>
+              <span className="card py-1.5 px-3 text-xs sm:text-sm rounded-xl">
+                Next.js
+              </span>
+              <span className="card py-1.5 px-3 text-xs sm:text-sm rounded-xl">
+                Figma
+              </span>
+              <span className="card py-1.5 px-3 text-xs sm:text-sm rounded-xl">
+                Notion
+              </span>
+            </div>
+            <a className="internal-link italic">View Case Study</a>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
