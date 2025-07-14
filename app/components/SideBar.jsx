@@ -1,18 +1,41 @@
 import Image from "next/image";
-import React from "react";
+import { useEffect, useState } from "react";
 
 const Sidebar = () => {
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+    const sections = ["about", "experience", "projects", "contact"];
+    let current = "";
+
+    for (const id of sections) {
+      const el = document.getElementById(id);
+      if (el) {
+        const rect = el.getBoundingClientRect();
+        // checks if the section is near the top quarter of viewport
+        if (rect.top <= window.innerHeight * 0.25 && rect.bottom >= window.innerHeight * 0.25) {
+          current = id;
+          break;
+        }
+      }
+    }
+
+    setActiveSection(current);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
   return (
     <>
       {/* sidebar for larger screens */}
       <aside
-        id="sticky-side-panel"
-        className="w-55 h-screen p-4 flex flex-col text-xl"
-        role="dialog"
-        tabIndex="-1"
-        aria-label="Sidebar"
+        className="w-55 h-screen p-4 flex flex-col"
+        aria-label="Side navigation bar"
       >
-        
         {/* logo */}
         <a href="/" className="block">
           <Image
@@ -27,15 +50,17 @@ const Sidebar = () => {
 
         {/* navigation links */}
 
-        <nav className="flex flex-col justify-center flex-grow p-2">
+        <nav className="flex flex-col flex-grow p-2">
           <ul
-            className="flex flex-col flex-grow justify-evenly font-heading"
-            data-hs-scrollspy="#scrollspy"
+            id="side-nav-links"
+            className="flex flex-col flex-grow justify-evenly "
           >
-            <li className="">
+            <li>
               <a
                 href="#about"
-                className="inline-flex items-center gap-3"
+                className={`inline-flex items-center gap-3 transition-colors duration-300 ${
+                  activeSection === "about" ? "text-foreground font-semibold" : "text-primary"
+                }`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +68,9 @@ const Sidebar = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="size-6"
+                  className={`size-7 transition-colors duration-300 ${
+                    activeSection === "about" ? "stroke-foreground stroke-2" : ""
+                  }`}
                 >
                   <path
                     strokeLinecap="round"
@@ -51,21 +78,22 @@ const Sidebar = () => {
                     d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
                   />
                 </svg>
-                about
+                about me
               </a>
             </li>
             <li>
-              <a
-                href="#experience"
-                className="inline-flex items-center gap-3"
-              >
+              <a href="#experience" className={`inline-flex items-center gap-3 transition-colors duration-300 ${
+                  activeSection === "experience" ? "text-foreground font-semibold" : "text-primary"
+                }`}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="size-6"
+                  className={`size-7 transition-colors duration-300 ${
+                    activeSection === "experience" ? "stroke-foreground stroke-2" : ""
+                  }`}
                 >
                   <path
                     strokeLinecap="round"
@@ -77,17 +105,18 @@ const Sidebar = () => {
               </a>
             </li>
             <li>
-              <a
-                href="#projects"
-                className="inline-flex items-center gap-3"
-              >
+              <a href="#projects" className={`inline-flex items-center gap-3 transition-colors duration-300 ${
+                  activeSection === "projects" ? "text-foreground font-semibold" : "text-primary"
+                }`}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="size-6"
+                  className={`size-7 transition-colors duration-300 ${
+                    activeSection === "projects" ? "stroke-foreground stroke-2" : ""
+                  }`}
                 >
                   <path
                     strokeLinecap="round"
@@ -99,17 +128,18 @@ const Sidebar = () => {
               </a>
             </li>
             <li>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-3"
-              >
+              <a href="#contact" className={`inline-flex items-center gap-3 transition-colors duration-300 ${
+                  activeSection === "contact" ? "text-foreground font-semibold" : "text-primary"
+                }`}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="size-6"
+                  className={`size-7 transition-colors duration-300 ${
+                    activeSection === "contact" ? "stroke-foreground stroke-2" : ""
+                  }`}
                 >
                   <path
                     strokeLinecap="round"

@@ -2,19 +2,19 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section id="hero" className="h-screen w-full bg-background text-foreground flex flex-col justify-center items-center px-6">
-      <h1 className="text-5xl md:text-6xl text-primary mb-4 text-center font-heading">
+    <section id="hero" className="h-screen w-full flex flex-col justify-center items-center px-6">
+      <h1 className="text-5xl md:text-6xl mb-4 text-center font-heading">
         Hi, I'm April
       </h1>
-      <p className="text-xl md:text-2xl font-body text-accent text-center">
+      <h1 className="text-xl md:text-2xl text-center">
         Web Development & UX Design Enthusiast
-      </p>
+      </h1>
       <a
         href="#main-content"
-        className="absolute bottom-6 animate-bounce text-primary"
+        className="absolute bottom-6 animate-bounce text-foreground"
       >
         <svg
-          className="w-6 h-6"
+          className="size-8"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
