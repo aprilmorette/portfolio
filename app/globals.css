@@ -1,40 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Quicksand", sans-serif;
+
+  --color-background: #f6f7f2; /* text */
+  --color-surface: #ffffff;
+  --color-foreground: #0a1944;
+  --color-muted: #d9d8dd;
+
+  --color-primary: #3c4f6d; /* background /95 */
+  --color-accent: #a5b5c4; /* text */
+  --color-hover: #d9d8dd;
+  --color-inverse: #ffffff;
+}
 
 :root {
   scroll-behavior: smooth;
   font-family: Inter, sans-serif;
   background-color: #f6f7f2;
-}
-
-@theme {
-  --font-heading: "Cormorant Garamond", serif;
-  --font-body: "Work Sans", sans-serif;
-
-  --color-background: #f6f7f2;
-  --color-surface: #ffffff;
-  --color-foreground: #0a1944;
-  --color-muted: #d9d8dd;
-
-  --color-primary: #3c4f6d;
-  --color-accent: #a5b5c4;
-  --color-hover: #d9d8dd;
-  --color-inverse: #ffffff;
-}
-
-body {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
-}
-
-h1,
-h2,
-h3 {
-  color: var(--color-primary);
-}
-
-p {
-  color: var(--color-foreground);
 }
 
 .card {
@@ -62,9 +46,9 @@ p {
   --color-foreground: #00070a;
   --color-muted: #597884;
 
-  --color-primary: #294552; /* background /90 */
+  --color-primary: #294552;
   --color-accent: #597884;
-  --color-hover: #acc4ce; /* text or f6f7f2 */
+  --color-hover: #acc4ce;
   --color-inverse: #ffffff;
 }
 
@@ -92,16 +76,42 @@ p {
   --color-inverse: #ffffff;
 }
 
-h2 {
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+h1, h2, h3 {
+  color: var(--color-primary);
   font-family: var(--font-heading);
-  font-size: 36px;
+}
+
+h2, h3 {
   font-weight: medium;
+  letter-spacing: wider;
+}
+
+h2 {
+  font-size: 3rem;
+  line-height: var(--text-5xl--line-height);
+  @media (width >= 64rem) {
+    font-size: 3.75rem;
+    line-height: var(--text-6xl--line-height);
+  }
 }
 
 h3 {
-  font-family: var(--font-heading);
-  font-size: 32px;
-  font-weight: medium;
+  font-size: 1.875rem;
+  line-height: var(--text-3xl--line-height);
+  @media (width >= 64rem) {
+    font-size: 2.25rem;
+    line-height: var(--text-4xl--line-height);
+  }
+}
+
+p {
+  color: var(--color-foreground);
+  font-family: var(--font-body);
 }
 
 nav {
@@ -120,7 +130,6 @@ nav {
   text-decoration: none;
   transition: color 0.3s ease;
   transition: transform 0.4s ease;
-  color: var(--color-primary);
 }
 #side-nav-links a:hover {
   transform: scale(1.1);
@@ -190,7 +199,8 @@ nav {
   width: 0%;
   left: 50%;
 }
-#mobile-menu-toggle.open:hover span:nth-child(2), #mobile-menu-toggle.open:hover span:nth-child(3) {
+#mobile-menu-toggle.open:hover span:nth-child(2),
+#mobile-menu-toggle.open:hover span:nth-child(3) {
   background: var(--color-background);
 }
 
