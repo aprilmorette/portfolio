@@ -6,7 +6,7 @@ const Experience = () => {
       id="experience"
       className="px-4 pt-10 pb-15 max-w-6xl mx-auto"
     >
-      <h2 className="text-center mb-5">experience</h2>
+      <h2 className="text-center mb-10">experience</h2>
 
       <div className="flex justify-around gap-8">
         {/* OSU CEAT IT */}
@@ -18,7 +18,7 @@ const Experience = () => {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="size-8 sm:size-12"
+            className="size-8 sm:size-12 stroke-primary"
           >
             <path
               strokeLinecap="round"
@@ -48,7 +48,7 @@ const Experience = () => {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="size-8 sm:size-12"
+            className="size-8 sm:size-12 stroke-primary"
           >
             <path
               strokeLinecap="round"

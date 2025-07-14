@@ -52,14 +52,14 @@ const Sidebar = () => {
 
         <nav className="flex flex-col flex-grow p-2">
           <ul
-            id="side-nav-links"
+            id=""
             className="flex flex-col flex-grow justify-evenly "
           >
             <li>
               <a
                 href="#about"
-                className={`inline-flex items-center gap-3 transition-colors duration-300 ${
-                  activeSection === "about" ? "text-foreground font-semibold" : "text-primary"
+                className={`internal-link relative inline-flex items-center gap-3 transition-colors duration-300 ${
+                  activeSection === "about" ? "text-foreground font-semibold active-underline active-underline" : "text-primary"
                 }`}
               >
                 <svg
@@ -82,8 +82,8 @@ const Sidebar = () => {
               </a>
             </li>
             <li>
-              <a href="#experience" className={`inline-flex items-center gap-3 transition-colors duration-300 ${
-                  activeSection === "experience" ? "text-foreground font-semibold" : "text-primary"
+              <a href="#experience" className={`internal-link relative inline-flex items-center gap-3 transition-colors duration-300 ${
+                  activeSection === "experience" ? "text-foreground font-semibold active-underline" : "text-primary"
                 }`}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -105,8 +105,8 @@ const Sidebar = () => {
               </a>
             </li>
             <li>
-              <a href="#projects" className={`inline-flex items-center gap-3 transition-colors duration-300 ${
-                  activeSection === "projects" ? "text-foreground font-semibold" : "text-primary"
+              <a href="#projects" className={`internal-link relative inline-flex items-center gap-3 transition-colors duration-300 ${
+                  activeSection === "projects" ? "text-foreground font-semibold active-underline" : "text-primary"
                 }`}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -128,8 +128,8 @@ const Sidebar = () => {
               </a>
             </li>
             <li>
-              <a href="#contact" className={`inline-flex items-center gap-3 transition-colors duration-300 ${
-                  activeSection === "contact" ? "text-foreground font-semibold" : "text-primary"
+              <a href="#contact" className={`internal-link relative inline-flex items-center gap-3 transition-colors duration-300 ${
+                  activeSection === "contact" ? "text-foreground font-semibold active-underline" : "text-primary"
                 }`}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

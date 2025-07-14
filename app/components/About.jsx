@@ -29,7 +29,9 @@ const About = () => {
             opportunities in web development, system administration, or
             cybersecurity.
           </p>
-          <a aria-label="Resume">View Resume</a>
+          <div>
+          <a className="internal-link italic"aria-label="Resume">View Resume</a>
+          </div>
         </div>
       </div>
 

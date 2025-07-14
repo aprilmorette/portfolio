@@ -28,20 +28,6 @@
   box-shadow: var(--shadow-md);
 }
 
-.btn-primary {
-  background-color: var(--color-primary);
-  color: var(--color-background);
-}
-
-.btn-primary:hover {
-  background-color: var(--color-foreground);
-}
-
-.btn-secondary {
-  background-color: var(--color-accent);
-  color: var(--color-foreground);
-}
-
 .theme-a {
   --color-background: #9db8b2;
   --color-surface: #acc4ce;
@@ -138,42 +124,51 @@ nav {
   line-height: var(--tw-leading, var(--text-2xl--line-height));
 }
 
-/*** side navigation links ***/
-#side-nav-links a {
+/*** internal link animations ***/
+.internal-link {
   position: relative;
   display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
   transition: color 0.3s ease;
-  transition: transform 0.4s ease;
-}
-#side-nav-links a:hover {
-  transform: scale(1.1);
-  color: var(--color-accent);
-}
-/* side nav icon animation */
-#side-nav-links a svg {
-  transition: transform 0.4s ease;
-}
-#side-nav-links a:hover svg {
-  stroke: var(--color-accent);
-}
-/* underline animation on hover */
-#side-nav-links a::before {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  height: 2px;
-  width: 100%;
-  background-color: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: left;
   transition: transform 0.3s ease;
+  &:hover {
+    color: var(--color-accent);
+    transform: scale(1.1);
+    cursor: pointer;
+  }
 }
-#side-nav-links a:hover::before {
-  transform: scaleX(1);
+.internal-link::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  transform: translateX(-50%) scaleX(0);
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent);
+  will-change: transform;
+  transform-origin: center;
+  transition: transform 0.4s ease;
+}
+
+.internal-link:hover::before {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.internal-link.active-underline::before {
+  transform: translate(-50%) scaleX(1);
+  background-color: var(--color-foreground);
+}
+
+.internal-link.active-underline:hover::before {
+  background-color: var(--color-accent);
+}
+
+/* side nav icon animation */
+.internal-link a svg {
+  transition: transform 0.4s ease;
+}
+.internal-link:hover svg {
+  stroke: var(--color-accent);
 }
 
 /*** mobile menu button ***/
@@ -226,15 +221,15 @@ nav {
   position: relative;
   touch-action: manipulation;
   color: var(--color-accent);
+  &:hover {
+      color: var(--color-background);
+  }
 }
 /* mobile menu nav link animations */
-#mobile-menu a:hover {
-  color: var(--color-background);
-}
 #mobile-menu a::before,
 #mobile-menu a::after {
   position: absolute;
-  content: "";
+  content: '';
   height: 3px;
   width: 50%;
   background: var(--color-accent);
