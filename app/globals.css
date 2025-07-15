@@ -258,7 +258,7 @@ nav {
 }
 
 /*** skills section ***/
-#skills div {
+#skills li {
   background-color: var(--color-surface);
   border: 1px solid var(--color-accent);
   justify-content: center;
@@ -266,4 +266,11 @@ nav {
   text-align: center;
   padding: 1rem 2rem;
   box-shadow: var(--shadow-md);
+}
+#skills li p {
+  font-size: 0.875rem;
+  @media (width >= 40rem) {
+    font-size: 1.125rem;
+    line-height: calc(1.75 / 1.125);
+  }
 }
