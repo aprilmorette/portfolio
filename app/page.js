@@ -29,7 +29,7 @@ export default function Home() {
             // fade in animation
             if (el.classList.contains("fade-in")) {
               el.classList.add("opacity-100", "translate-y-0");
-              el.classList.remove("opacity-0", "translate-y-10");
+              el.classList.remove("opacity-0", "translate-y-15");
             }
 
             // slide left animation
@@ -42,10 +42,10 @@ export default function Home() {
               });
             }
 
-            // zoom in animation
-            if (el.classList.contains("zoom-in")) {
+            // pop in animation
+            if (el.classList.contains("pop-in")) {
               el.classList.add("opacity-100", "scale-100");
-              el.classList.remove("opacity-0", "scale-90");
+              el.classList.remove("opacity-0", "scale-0");
             }
 
             observer.unobserve(el);
@@ -56,7 +56,7 @@ export default function Home() {
     );
 
     document
-      .querySelectorAll(".fade-in, .slide-left, .zoom-in")
+      .querySelectorAll(".fade-in, .slide-left, .pop-in")
       .forEach((el) => observer.observe(el));
 
     return () => {

@@ -58,7 +58,7 @@ const Sidebar = () => {
             <li>
               <a
                 href="#about"
-                className={`internal-link relative inline-flex items-center gap-3 transition-colors duration-300 ${
+                className={`link relative inline-flex items-center gap-3 transition-colors duration-300 ${
                   activeSection === "about" ? "text-foreground font-semibold active-underline active-underline" : "text-primary"
                 }`}
               >
@@ -82,7 +82,7 @@ const Sidebar = () => {
               </a>
             </li>
             <li>
-              <a href="#experience" className={`internal-link relative inline-flex items-center gap-3 transition-colors duration-300 ${
+              <a href="#experience" className={`link relative inline-flex items-center gap-3 transition-colors duration-300 ${
                   activeSection === "experience" ? "text-foreground font-semibold active-underline" : "text-primary"
                 }`}>
                 <svg
@@ -105,7 +105,7 @@ const Sidebar = () => {
               </a>
             </li>
             <li>
-              <a href="#projects" className={`internal-link relative inline-flex items-center gap-3 transition-colors duration-300 ${
+              <a href="#projects" className={`link relative inline-flex items-center gap-3 transition-colors duration-300 ${
                   activeSection === "projects" ? "text-foreground font-semibold active-underline" : "text-primary"
                 }`}>
                 <svg
@@ -128,7 +128,7 @@ const Sidebar = () => {
               </a>
             </li>
             <li>
-              <a href="#contact" className={`internal-link relative inline-flex items-center gap-3 transition-colors duration-300 ${
+              <a href="#contact" className={`link relative inline-flex items-center gap-3 transition-colors duration-300 ${
                   activeSection === "contact" ? "text-foreground font-semibold active-underline" : "text-primary"
                 }`}>
                 <svg

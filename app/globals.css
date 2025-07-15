@@ -124,8 +124,8 @@ nav {
   line-height: var(--tw-leading, var(--text-2xl--line-height));
 }
 
-/*** internal link animations ***/
-.internal-link {
+/*** link animations ***/
+.link {
   position: relative;
   display: inline-flex;
   transition: color 0.3s ease;
@@ -136,7 +136,7 @@ nav {
     cursor: pointer;
   }
 }
-.internal-link::before {
+.link::before {
   content: '';
   position: absolute;
   left: 50%;
@@ -150,24 +150,24 @@ nav {
   transition: transform 0.4s ease;
 }
 
-.internal-link:hover::before {
+.link:hover::before {
   transform: translateX(-50%) scaleX(1);
 }
 
-.internal-link.active-underline::before {
+.link.active-underline::before {
   transform: translate(-50%) scaleX(1);
   background-color: var(--color-foreground);
 }
 
-.internal-link.active-underline:hover::before {
+.link.active-underline:hover::before {
   background-color: var(--color-accent);
 }
 
 /* side nav icon animation */
-.internal-link a svg {
+.link a svg {
   transition: transform 0.4s ease;
 }
-.internal-link:hover svg {
+.link:hover svg {
   stroke: var(--color-accent);
 }
 

@@ -7,7 +7,7 @@ const About = () => {
     <section id="about" className="px-4 pt-10 pb-15 max-w-6xl mx-auto">
       <h2 className="text-center mb-5">about me</h2>
 
-      <div className="card flex flex-col lg:flex-row items-center justify-around p-8 gap-5">
+      <div className="card pop-in opacity-0 scale-0 transition-all duration-2000 flex flex-col lg:flex-row items-center justify-around p-8 gap-5">
         <Image
           src="/profile-picture.jpg"
           alt="April Duff profile picture"
@@ -31,7 +31,7 @@ const About = () => {
             cybersecurity.
           </p>
           <div>
-          <a className="internal-link italic"aria-label="Resume">View Resume</a>
+          <a className="link italic" aria-label="Resume">View Resume</a>
           </div>
         </div>
       </div>

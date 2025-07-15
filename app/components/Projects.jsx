@@ -28,7 +28,7 @@ const Projects = () => {
                 Webstorm
               </span>
             </div>
-            <a className="internal-link italic">View Case Study</a>
+            <a className="link italic">View Case Study</a>
           </div>
         </div>
 
@@ -76,7 +76,7 @@ const Projects = () => {
                 Notion
               </span>
             </div>
-            <a className="internal-link italic">View Case Study</a>
+            <a className="link italic">View Case Study</a>
           </div>
         </div>
       </div>

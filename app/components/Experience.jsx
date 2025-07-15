@@ -8,9 +8,9 @@ const Experience = () => {
     >
       <h2 className="text-center mb-10">experience</h2>
 
-      <div className="flex justify-around gap-8">
+      <div className="flex flex-col lg:flex-row justify-around gap-8">
         {/* OSU CEAT IT */}
-        <div className="card flex flex-col items-center p-8 basis-1/2">
+        <div className="card fade-in opacity-0 translate-y-15 transition-all duration-1000 flex flex-col items-center p-8 basis-1/2">
           <p className="italic">MAY 2022 - MAY 2025</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@ const Experience = () => {
             />
           </svg>
           <p>Student IT Technician</p>
-          <a href="https://ceat.okstate.edu/itservices/" aria-label="OSU CEAT IT Website">Oklahoma State University CEAT IT</a>
+          <a href="https://ceat.okstate.edu/itservices/" aria-label="OSU CEAT IT Website" className="link">Oklahoma State University CEAT IT</a>
 
           <div className="text-center">
             <p>
@@ -40,7 +40,7 @@ const Experience = () => {
         </div>
 
         {/* QuikTrip */}
-        <div className="card flex flex-col items-center p-8 basis-1/2">
+        <div className="card fade-in opacity-0 translate-y-15 transition-all duration-1000 flex flex-col items-center p-8 basis-1/2">
           <p className="italic">JUNE 2020 - AUGUST 2021</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ const Experience = () => {
           </svg>
 
           <p>Store Clerk</p>
-          <a href="https://www.quiktrip.com/" aria-label="QuikTrip Website">QuikTrip</a>
+          <a href="https://www.quiktrip.com/" aria-label="QuikTrip Website" className="link">QuikTrip</a>
           <div className="text-center">
             <p>Managed customer transactions and daily cash handling.</p>
             <p>
