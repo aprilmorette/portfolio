@@ -59,7 +59,7 @@ const Sidebar = () => {
               <a
                 href="#about"
                 className={`link relative inline-flex items-center gap-3 transition-colors duration-300 ${
-                  activeSection === "about" ? "text-foreground font-semibold active-underline active-underline" : "text-primary"
+                  activeSection === "about" ? "text-foreground font-semibold active-underline active-underline" : ""
                 }`}
               >
                 <svg
@@ -83,7 +83,7 @@ const Sidebar = () => {
             </li>
             <li>
               <a href="#experience" className={`link relative inline-flex items-center gap-3 transition-colors duration-300 ${
-                  activeSection === "experience" ? "text-foreground font-semibold active-underline" : "text-primary"
+                  activeSection === "experience" ? "text-foreground font-semibold active-underline" : ""
                 }`}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +106,7 @@ const Sidebar = () => {
             </li>
             <li>
               <a href="#projects" className={`link relative inline-flex items-center gap-3 transition-colors duration-300 ${
-                  activeSection === "projects" ? "text-foreground font-semibold active-underline" : "text-primary"
+                  activeSection === "projects" ? "text-foreground font-semibold active-underline" : ""
                 }`}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +129,7 @@ const Sidebar = () => {
             </li>
             <li>
               <a href="#contact" className={`link relative inline-flex items-center gap-3 transition-colors duration-300 ${
-                  activeSection === "contact" ? "text-foreground font-semibold active-underline" : "text-primary"
+                  activeSection === "contact" ? "text-foreground font-semibold active-underline" : ""
                 }`}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
