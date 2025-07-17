@@ -1,4 +1,4 @@
-import { Playfair_Display, Quicksand, Work_Sans, Cormorant_Garamond } from 'next/font/google';
+import { Playfair_Display, Quicksand } from 'next/font/google';
 import './globals.css';
 
 const playfair = Playfair_Display({
