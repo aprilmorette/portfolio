@@ -76,7 +76,6 @@
   }
 }
 
-
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
@@ -150,7 +149,7 @@ nav {
   }
 }
 .link::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   bottom: -4px;
@@ -235,14 +234,14 @@ nav {
   touch-action: manipulation;
   color: var(--color-accent);
   &:hover {
-      color: var(--color-background);
+    color: var(--color-background);
   }
 }
 /* mobile menu nav link animations */
 #mobile-menu a::before,
 #mobile-menu a::after {
   position: absolute;
-  content: '';
+  content: "";
   height: 3px;
   width: 50%;
   background: var(--color-accent);
@@ -280,7 +279,10 @@ nav {
   padding: 0.5rem 1rem;
   box-shadow: var(--shadow-md);
   @media (width >= 48rem) {
-    padding: 1rem 2rem
+    padding: 0.5rem 1rem;
+  }
+  @media (width >= 64rem) {
+    padding: 1rem 2rem;
   }
 }
 #skills li p {
