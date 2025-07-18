@@ -23,8 +23,8 @@ const About = () => {
           >
             I am a recent Computer Science graduate from Oklahoma State
             University with a passion for blending creativity and technical
-            skills to design thoughtful, user-centered web experiences. I
-            believe in approaching problems with curiosity and empathy, and I am
+            skills to design <span className="font-bold">thoughtful, user-centered web experiences.</span> I
+            believe in approaching problems with <span className="font-bold">curiosity</span> and <span className="font-bold">empathy</span>, and I am
             always looking for opportunities to learn and grow. I am currently
             seeking junior developer roles, freelance projects, or entry-level
             opportunities in web development, system administration, or
