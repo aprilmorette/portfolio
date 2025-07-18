@@ -129,10 +129,17 @@ p {
   font-family: var(--font-body);
 }
 
-nav {
+#home-nav .link {
   font-family: var(--font-heading);
   letter-spacing: 0.025em;
   font-size: 1.5rem;
+  line-height: var(--tw-leading, var(--text-2xl--line-height));
+}
+
+#expensify-nav .link {
+  font-family: var(--font-heading);
+  letter-spacing: 0.025em;
+  font-size: 1.25rem;
   line-height: var(--tw-leading, var(--text-2xl--line-height));
 }
 
@@ -167,7 +174,7 @@ nav {
 }
 
 .link.active-underline::before {
-  transform: translate(-50%) scaleX(1);
+  transform: translateX(-50%) scaleX(1);
   background-color: var(--color-foreground);
 }
 
@@ -176,7 +183,7 @@ nav {
 }
 
 /* side nav icon animation */
-.link a svg {
+.link svg {
   transition: transform 0.4s ease;
 }
 .link:hover svg {
