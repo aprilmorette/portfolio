@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Link from "next/link";
 
 const Projects = () => {
   return (
@@ -7,7 +7,7 @@ const Projects = () => {
       <h2 className="text-center mb-10">projects</h2>
 
       {/* expensify project */}
-      <div className="pb-12 flex gap-4 lg:gap-6">
+      <div className="fade-in opacity-0 translate-y-15 transform-all duration-1000 pb-12 flex gap-4 lg:gap-6">
         <div className="basis-1/3 flex flex-col justify-end mb-2">
           <div className="text-right">
             <h3>Expensify</h3>
@@ -28,7 +28,22 @@ const Projects = () => {
                 Webstorm
               </span>
             </div>
-            <a className="link italic">View Case Study</a>
+            <Link href="/Expensify" className="link italic inline-flex items-center font-bold">View Case Study
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-4 ml-1"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </Link>
           </div>
         </div>
 
@@ -42,7 +57,7 @@ const Projects = () => {
       </div>
 
       {/* portfolio project */}
-      <div className="py-12 flex gap-4 lg:gap-6">
+      <div className="fade-in opacity-0 translate-y-15 transform-all duration-1000 py-12 flex gap-4 lg:gap-6">
         <a className="basis-2/3" href="#">
           <img
             className="card"
@@ -76,7 +91,22 @@ const Projects = () => {
                 Notion
               </span>
             </div>
-            <a className="link italic">View Case Study</a>
+            <Link href="/Portfolio" className="link italic inline-flex items-center font-bold">View Case Study
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-4 ml-1"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </Link>
           </div>
         </div>
       </div>
