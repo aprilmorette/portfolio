@@ -45,26 +45,26 @@ const About = () => {
         <div className="slide-left max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto">
           <ul id="skills" className="flex flex-wrap justify-items-center items-center gap-2 sm:gap-6 font-body">
 
-            <li className="opacity-0 -translate-x-10 transition-all duration-700"><p>JavaScript</p></li>
-            <li className="opacity-0 -translate-x-10 transition-all duration-700"><p>HTML</p></li>
-            <li className="opacity-0 -translate-x-10 transition-all duration-700"><p>CSS</p></li>
-            <li className="opacity-0 -translate-x-10 transition-all duration-700"><p>Java</p></li>
-            <li className="opacity-0 -translate-x-10 transition-all duration-700"><p>React</p></li>
-            <li className="opacity-0 -translate-x-10 transition-all duration-700"><p>Tailwind CSS</p></li>
-            <li className="opacity-0 -translate-x-10 transition-all duration-700"><p>SQL</p></li>
-            <li className="opacity-0 -translate-x-10 transition-all duration-700"><p>Visual Studio</p></li>
-            <li className="opacity-0 -translate-x-10 transition-all duration-700"><p>Git</p></li>
-            <li className="opacity-0 -translate-x-10 transition-all duration-700"><p>Vercel</p></li>
+            <li className="opacity-0 -translate-x-10 transition duration-700"><p>JavaScript</p></li>
+            <li className="opacity-0 -translate-x-10 transition duration-700"><p>HTML</p></li>
+            <li className="opacity-0 -translate-x-10 transition duration-700"><p>CSS</p></li>
+            <li className="opacity-0 -translate-x-10 transition duration-700"><p>Java</p></li>
+            <li className="opacity-0 -translate-x-10 transition duration-700"><p>React</p></li>
+            <li className="opacity-0 -translate-x-10 transition duration-700"><p>Tailwind CSS</p></li>
+            <li className="opacity-0 -translate-x-10 transition duration-700"><p>SQL</p></li>
+            <li className="opacity-0 -translate-x-10 transition duration-700"><p>Visual Studio</p></li>
+            <li className="opacity-0 -translate-x-10 transition duration-700"><p>Git</p></li>
+            <li className="opacity-0 -translate-x-10 transition duration-700"><p>Vercel</p></li>
           </ul>
         </div>
 
         <h4 className="mt-10 mb-4">design</h4>
         <div className="slide-left max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto">
           <ul id="skills" className="flex flex-wrap justify-items-center items-center gap-2 sm:gap-6 font-body">
-            <li className="opacity-0 -translate-x-10 transition-all duration-700"><p>Figma</p></li>
-            <li className="opacity-0 -translate-x-10 transition-all duration-700"><p>Milanote</p></li>
-            <li className="opacity-0 -translate-x-10 transition-all duration-700"><p>Notion</p></li>
-            <li className="opacity-0 -translate-x-10 transition-all duration-700"><p>Pen and Paper</p></li>
+            <li className="opacity-0 -translate-x-10 transition duration-700"><p>Figma</p></li>
+            <li className="opacity-0 -translate-x-10 transition duration-700"><p>Milanote</p></li>
+            <li className="opacity-0 -translate-x-10 transition duration-700"><p>Notion</p></li>
+            <li className="opacity-0 -translate-x-10 transition duration-700"><p>Pen and Paper</p></li>
           </ul>
         </div>
       </div>
