@@ -7,7 +7,7 @@ const About = () => {
     <section id="about" className="px-4 pt-10 pb-15 max-w-6xl mx-auto">
       <h2 className="text-center mb-5">about me</h2>
 
-      <div className="card pop-in opacity-0 scale-0 transition-all duration-2000 flex flex-col lg:flex-row items-center justify-around p-8 gap-5">
+      <div className="card pop-in opacity-0 scale-0 transition-all duration-1500 flex flex-col lg:flex-row items-center justify-around p-8 gap-5">
         <Image
           src="/profile-picture.jpg"
           alt="April Duff profile picture"
@@ -31,7 +31,22 @@ const About = () => {
             cybersecurity.
           </p>
           <div>
-          <a className="link italic" aria-label="Resume">View Resume</a>
+          <a className="link italic inline-flex items-center font-bold" aria-label="Resume">View Resume
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-4 ml-1"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+          </a>
           </div>
         </div>
       </div>
@@ -43,7 +58,7 @@ const About = () => {
         <h4 className="mt-6 mb-4">development</h4>
 
         <div className="slide-left max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto">
-          <ul id="skills" className="flex flex-wrap justify-items-center items-center gap-2 sm:gap-6 font-body">
+          <ul id="skills" className="flex flex-wrap justify-items-center items-center gap-2 md:gap-4 lg:gap-6 font-body">
 
             <li className="opacity-0 -translate-x-10 transition duration-700"><p>JavaScript</p></li>
             <li className="opacity-0 -translate-x-10 transition duration-700"><p>HTML</p></li>
@@ -60,7 +75,7 @@ const About = () => {
 
         <h4 className="mt-10 mb-4">design</h4>
         <div className="slide-left max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto">
-          <ul id="skills" className="flex flex-wrap justify-items-center items-center gap-2 sm:gap-6 font-body">
+          <ul id="skills" className="flex flex-wrap justify-items-center items-center gap-2 md:gap-4 lg:gap-6 font-body">
             <li className="opacity-0 -translate-x-10 transition duration-700"><p>Figma</p></li>
             <li className="opacity-0 -translate-x-10 transition duration-700"><p>Milanote</p></li>
             <li className="opacity-0 -translate-x-10 transition duration-700"><p>Notion</p></li>
