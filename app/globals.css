@@ -85,14 +85,16 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   color: var(--color-primary);
   font-family: var(--font-heading);
 }
 
 h2,
 h3,
-h4 {
+h4,
+h5 {
   font-weight: 500;
   letter-spacing: wider;
 }
@@ -124,6 +126,16 @@ h4 {
   }
 }
 
+h5 {
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: var(--text-xl--line-height);
+  @media (width >= 64rem) {
+    font-size: 1.5rem;
+    line-height: var(--text-2xl--line-height);
+  }
+}
+
 p {
   color: var(--color-foreground);
   font-family: var(--font-body);
@@ -140,6 +152,7 @@ p {
   font-family: var(--font-heading);
   letter-spacing: 0.025em;
   font-size: 1.25rem;
+  font-weight: 500;
   line-height: var(--tw-leading, var(--text-2xl--line-height));
 }
 
