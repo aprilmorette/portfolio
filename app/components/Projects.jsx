@@ -47,7 +47,7 @@ const Projects = () => {
           </div>
         </div>
 
-        <a className="basis-2/3" href="#">
+        <a className="basis-2/3" href="/Expensify">
           <img
             className="card"
             src="/expensify.png"
@@ -58,7 +58,7 @@ const Projects = () => {
 
       {/* portfolio project */}
       <div className="fade-in opacity-0 translate-y-15 transform-all duration-1000 py-12 flex gap-4 lg:gap-6">
-        <a className="basis-2/3" href="#">
+        <a className="basis-2/3" href="/Portfolio">
           <img
             className="card"
             src="/portfolio-hero.png"
