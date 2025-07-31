@@ -96,13 +96,12 @@ h3,
 h4,
 h5 {
   font-weight: 500;
-  letter-spacing: wider;
 }
 
 h2 {
   font-size: 3rem;
   line-height: var(--text-5xl--line-height);
-  @media (width >= 64rem) {
+  @media (width >= 40rem) {
     font-size: 3.75rem;
     line-height: var(--text-6xl--line-height);
   }
@@ -111,7 +110,7 @@ h2 {
 h3 {
   font-size: 1.875rem;
   line-height: var(--text-3xl--line-height);
-  @media (width >= 64rem) {
+  @media (width >= 40rem) {
     font-size: 2.25rem;
     line-height: var(--text-4xl--line-height);
   }
@@ -120,29 +119,36 @@ h3 {
 h4 {
   font-size: 1.5rem;
   line-height: var(--text-2xl--line-height);
-  @media (width >= 64rem) {
+  @media (width >= 40rem) {
     font-size: 1.875rem;
     line-height: var(--text-3xl--line-height);
   }
 }
 
 h5 {
-  font-style: italic;
+  font-weight: 600;
   font-size: 1.25rem;
   line-height: var(--text-xl--line-height);
-  @media (width >= 64rem) {
+  @media (width >= 40rem) {
     font-size: 1.5rem;
     line-height: var(--text-2xl--line-height);
   }
 }
 
-p {
+#project p {
   color: var(--color-foreground);
   font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.625;
 }
 
-ol, ul {
-  list-style-position: inside;
+details {
+  margin-block: calc(var(--spacing) * 10);
+}
+
+hr {
+  border-top: 2px solid var(--color-primary);
+  margin-block: calc(var(--spacing) * 16);
 }
 
 #home-nav .link {

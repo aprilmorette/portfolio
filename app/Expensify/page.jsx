@@ -3,7 +3,6 @@ import Image from "next/image";
 import Sidebar from "../components/SideBar";
 
 const sections = [
-  { id: "introduction", label: "introduction" },
   { id: "project-overview", label: "project overview" },
   { id: "design-process", label: "design process" },
   { id: "requirements-analysis", label: "requirements analysis" },
@@ -17,79 +16,113 @@ const sections = [
 
 const page = () => {
   return (
-    <div className="flex">
-      {/* Sidebar for large screens */}
+    <div id="project" className="flex">
+      {/* sidebar for large screens */}
       <aside className="hidden md:block w-64 sticky top-0 h-screen">
         <Sidebar id="expensify-nav" sections={sections} />
       </aside>
 
-      {/* Main content */}
-      <main className="flex-1 p-6 space-y-20">
+      {/* main content */}
+      <main className="pt-10 max-w-6xl mx-10">
         <h2 className="text-center">Expensify</h2>
-        <section id="introduction">
-          <h3>Introduction</h3>
-          <div>
-            <h5>Project Description</h5>
-            <p>
-              A web-based application for tracking and analyzing user expenses.
-              It implements the Google Identity Service API for authentication.
-              Features include creating and deleting expenses, displaying
-              graphical insights, filtering expense history, and customizing
-              user settings.
-            </p>
-            <h5>Goals</h5>
-            <ol className="list-decimal">
-              <li>
-                Create an intuitive, secure, and efficient platform for users to
-                manage their expenses.
-              </li>
-              <li>
-                Gain hands-on experience with the software development life
-                cycle through agile development practices.
-              </li>
-            </ol>
+        <section id="project-overview">
+          <h3 className="py-10">Project Overview</h3>
+          <div className="flex flex-wrap xl:flex-nowrap gap-8 items-center">
+            <video className="w-lg md:w-2xl lg:w-4xl h-auto rounded-lg shadow-sm" controls>
+              <source src="" type="video/mp4"></source>
+            </video>
+            <div className="flex flex-col justify-between gap-y-10 xl:basis-1/2">
+              <hgroup>
+                <h5>Description</h5>
+                <p>
+                  A web‑based application for tracking and analyzing expenses
+                  with Google Identity Service API for secure authentication.
+                  Core features include creating and deleting expenses,
+                  displaying graphical insights, filtering expense history, and
+                  customizing user settings.
+                </p>
+              </hgroup>
+              <hgroup>
+                <h5>Context</h5>
+                <p>
+                  Developed as part of a Software Engineering class at Oklahoma
+                  State University. The professor acted as the stakeholder, and
+                  the student body represented the client base.
+                </p>
+              </hgroup>
+            </div>
           </div>
+          <hr></hr>
+          <div className="flex flex-wrap md:flex-nowrap justify-center gap-8">
+            <div className="flex flex-col items-center justify-evenly p-4 text-center gap-1 basis-1/3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-8 stroke-primary"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"
+                />
+              </svg>
+              <h5>Problem</h5>
+              <p>
+                Students need a simple way to track expenses and visualize
+                spending patterns in order to practice financial literacy.
+              </p>
+            </div>
+            <div className="flex flex-col items-center text-center justify-evenly p-4 gap-1 basis-1/3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-8 stroke-primary"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                />
+              </svg>
+              <h5>Goal</h5>
+              <p>
+                Create an intuitive, secure, and efficient platform to help
+                users manage expenses while gaining hands‑on experience with the
+                software development life cycle through agile practices.
+              </p>
+            </div>
+            <div className="flex flex-col items-center text-center justify-evenly p-4 gap-1 basis-1/3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-8 stroke-primary"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                />
+              </svg>
+              <h5>Scope</h5>
+              <p>3-month semester long project</p>
+            </div>
+          </div>
+          <hr></hr>
         </section>
-
-        <details id="project-overview" className="group">
-          <summary className="flex items-center gap-2 cursor-pointer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2.5}
-              stroke="currentColor"
-              className="size-6 transition-transform duration-300 group-open:rotate-90 stroke-foreground"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m8.25 4.5 7.5 7.5-7.5 7.5"
-              />
-            </svg>
-            <h3>Project Overview</h3>
-          </summary>
-          <div>
-            <h5>Context</h5>
-            <p>
-              This project was assigned in the Software Engineering class at
-              Oklahoma State University. The professor served as our stakeholder
-              and the college's student body represented our client base.
-            </p>
-            <h5>Problem Statement</h5>
-            <p>
-              Beyond academics, college students are also learning to manage
-              their personal finances. Starting the budgeting process can be
-              overwhelming, so there needed to be a simple way to track expenses
-              and visualize spending patterns.
-            </p>
-            <h5>Project Scope</h5>
-            <p>
-              Since the project was for a semester long class, the duration of
-              the project lasted three months.
-            </p>
-          </div>
-        </details>
 
         <details id="design-process" className="group">
           <summary className="flex items-center gap-2 cursor-pointer">
@@ -443,7 +476,6 @@ const page = () => {
             <h3>Implementation</h3>
           </summary>
           <div>
-
             <h5>Code Structure</h5>
             <p>
               The code for Expensify is organized into several distinct modules,
@@ -454,14 +486,14 @@ const page = () => {
             </p>
 
             <h5>Challenges</h5>
-            <ol className="list-decimal">
+            <ol className="list-decimal pl-5">
               <li>
                 Implementing Google OAuth for user authentication was complex
                 due to the need to securely handle tokens. Additionally,
                 ensuring that the token was consistently passed to every API
                 endpoint that modified data added further complexity.
                 <p>Solution:</p>
-                <ul className="list-disc">
+                <ul className="list-[circle] pl-5">
                   <li>
                     Used Passport.js to simplify the OAuth flow and manage token
                     generation securely.
@@ -483,7 +515,7 @@ const page = () => {
                 pre-designed expenses page while avoiding conflicts in CSS, such
                 as overlapping styles or unexpected behavior caused by shared
                 class names.<p>Solution:</p>
-                <ul className="list-disc">
+                <ul className="list-[circle] ms-5">
                   <li>
                     Used a CSS modular approach, encapsulating styles specific
                     to the login page by prefixing classes with a unique
@@ -506,7 +538,7 @@ const page = () => {
                 such as charts overlapping other UI elements or failing to
                 refresh when new data was added.
                 <p>Solution:</p>
-                <ul className="list-disc">
+                <ul className="list-[circle] ms-5">
                   <li>
                     Leveraged Chart.js for rendering charts due to its
                     flexibility and ease of use.
@@ -654,38 +686,56 @@ const page = () => {
             <h3>Timeline</h3>
           </summary>
           <div>
-            <ol className="relative border-l-2 border-accent">
+            <ul className="relative border-l-2 border-accent">
+              {/* Sprint One */}
               <li className="mb-10 ms-4">
-                <div className="absolute size-3 bg-accent rounded-full mt-1.5 -start-1.5 border border-white"></div>
+                <div className="absolute mt-1.5 -start-1.5 w-3 h-3 bg-accent rounded-full border border-white"></div>
                 <time className="mb-1 text-sm font-normal leading-none text-primary">
                   February 2022
                 </time>
-                <h5>
-                  Sprint 1: Finalize Design and Implement Core Features
-                </h5>
+                <h5>Sprint 1: Finalize Design and Implement Core Features</h5>
                 <ul className="list-disc">
-                  <li>Objectives
-                    <ul className="list-disc">
-                      <li>Complete the overall system design and architecture.</li>
-                      <li>Implement core features: user account creation and basic expense tracking (add, modify, delete expenses).</li>
-                      <li>Ensure basic unit testing for the foundational functionality.</li>
+                  <li>
+                    Objectives
+                    <ul className="list-[circle] ps-5">
+                      <li>
+                        Complete the overall system design and architecture.
+                      </li>
+                      <li>
+                        Implement core features: user account creation and basic
+                        expense tracking (add, modify, delete expenses).
+                      </li>
+                      <li>
+                        Ensure basic unit testing for the foundational
+                        functionality.
+                      </li>
                     </ul>
                   </li>
-                  <li>Deliverables
-                    <ul className="list-disc">
-                      <li>Fully functional user account creation and expense tracking modules.</li>
+                  <li>
+                    Deliverables
+                    <ul className="list-[circle] ps-5">
+                      <li>
+                        Fully functional user account creation and expense
+                        tracking modules.
+                      </li>
                       <li>Initial unit tests for these core features.</li>
                     </ul>
                   </li>
-                  <li>Summary
-                    <ul className="list-disc">
-                      <li>Sprint 1 laid the foundation for the application by establishing its architecture and implementing essential expense management features. Initial testing validated the core functionalities, ensuring a strong base for future enhancements.</li>
+                  <li>
+                    Summary
+                    <ul className="list-[circle]">
+                      <li className="pl-5">
+                        Sprint 1 laid the foundation for the application by
+                        establishing its architecture and implementing essential
+                        expense management features. Initial testing validated
+                        the core functionalities, ensuring a strong base for
+                        future enhancements.
+                      </li>
                     </ul>
                   </li>
                 </ul>
               </li>
-              
-            </ol>
+            </ul>
           </div>
         </details>
 
