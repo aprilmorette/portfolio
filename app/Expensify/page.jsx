@@ -18,7 +18,7 @@ const page = () => {
   return (
     <div id="project" className="flex">
       {/* sidebar for large screens */}
-      <aside className="hidden md:block w-64 sticky top-0 h-screen">
+      <aside className="hidden lg:block w-64 sticky top-0 h-screen">
         <Sidebar id="expensify-nav" sections={sections} />
       </aside>
 
@@ -28,7 +28,10 @@ const page = () => {
         <section id="project-overview">
           <h3 className="py-10">Project Overview</h3>
           <div className="flex flex-wrap xl:flex-nowrap gap-8 items-center">
-            <video className="w-lg md:w-2xl lg:w-4xl h-auto rounded-lg shadow-sm" controls>
+            <video
+              className="w-lg md:w-2xl lg:w-4xl h-auto rounded-lg shadow-sm"
+              controls
+            >
               <source src="" type="video/mp4"></source>
             </video>
             <div className="flex flex-col justify-between gap-y-10 xl:basis-1/2">
@@ -53,8 +56,8 @@ const page = () => {
             </div>
           </div>
           <hr></hr>
-          <div className="flex flex-wrap md:flex-nowrap justify-center gap-8">
-            <div className="flex flex-col items-center justify-evenly p-4 text-center gap-1 basis-1/3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 text-center">
+            <div className="flex flex-col items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -69,13 +72,13 @@ const page = () => {
                   d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"
                 />
               </svg>
-              <h5>Problem</h5>
+              <h5 className="my-1 md:my-2">Problem</h5>
               <p>
                 Students need a simple way to track expenses and visualize
                 spending patterns in order to practice financial literacy.
               </p>
             </div>
-            <div className="flex flex-col items-center text-center justify-evenly p-4 gap-1 basis-1/3">
+            <div className="flex flex-col items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -95,14 +98,14 @@ const page = () => {
                   d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
                 />
               </svg>
-              <h5>Goal</h5>
+              <h5 className="my-1 md:my-2">Goal</h5>
               <p>
                 Create an intuitive, secure, and efficient platform to help
                 users manage expenses while gaining hands‑on experience with the
                 software development life cycle through agile practices.
               </p>
             </div>
-            <div className="flex flex-col items-center text-center justify-evenly p-4 gap-1 basis-1/3">
+            <div className="flex flex-col items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -117,7 +120,7 @@ const page = () => {
                   d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
                 />
               </svg>
-              <h5>Scope</h5>
+              <h5 className="my-1 md:my-2">Scope</h5>
               <p>3-month semester long project</p>
             </div>
           </div>

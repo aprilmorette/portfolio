@@ -161,7 +161,7 @@ hr {
 #expensify-nav .link {
   font-family: var(--font-heading);
   letter-spacing: 0.025em;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 500;
   line-height: var(--tw-leading, var(--text-2xl--line-height));
 }
