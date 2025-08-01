@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import Sidebar from "../components/SideBar";
 
@@ -15,12 +16,13 @@ const sections = [
 ];
 
 const page = () => {
+  const [activeTab, setActiveTab] = useState("individual-users");
   return (
-    <div id="project" className="flex">
-      {/* sidebar for large screens */}
+    <div id="project" className="flex justify-center">
+      {/* sidebar for large screens 
       <aside className="hidden lg:block w-64 sticky top-0 h-screen">
         <Sidebar id="expensify-nav" sections={sections} />
-      </aside>
+      </aside> */}
 
       {/* main content */}
       <main className="pt-10 max-w-6xl mx-10">
@@ -32,7 +34,6 @@ const page = () => {
               className="w-lg md:w-2xl lg:w-4xl h-auto rounded-lg shadow-sm"
               controls
             >
-              <source src="" type="video/mp4"></source>
             </video>
             <div className="flex flex-col justify-between gap-y-10 xl:basis-1/2">
               <hgroup>
@@ -124,8 +125,8 @@ const page = () => {
               <p>3-month semester long project</p>
             </div>
           </div>
-          <hr></hr>
         </section>
+        <hr></hr>
 
         <details id="design-process" className="group">
           <summary className="flex items-center gap-2 cursor-pointer">
@@ -135,7 +136,7 @@ const page = () => {
               viewBox="0 0 24 24"
               strokeWidth={2.5}
               stroke="currentColor"
-              className="size-6 transition-transform duration-300 group-open:rotate-90 stroke-foreground"
+              className="size-6 transition-transform duration-300 group-open:rotate-90 stroke-primary"
             >
               <path
                 strokeLinecap="round"
@@ -145,42 +146,65 @@ const page = () => {
             </svg>
             <h3>Design Process</h3>
           </summary>
-          <div>
-            <h5>Design Framework</h5>
-            <p>
-              We used the Scrum Agile methodology because of its capability to
-              adapt to the constant altering of requirements at any stage of a
-              project. Along with that, it conforms well to feedback and
-              adjustments provided by the stakeholder. The sprint layout allowed
-              the team to have flexibility in the development process while
-              maintaining a steady pace.
-            </p>
-            <h5>Tools & Techniques</h5>
-            <p>
-              For project management, the team used Asana to keep track of
-              important deadlines and visualize the product backlog with a
-              timeline. During the planning stage, system designs such as the
-              architecture and sequence diagram were outlined using Draw.io
-              because of its readily available templates and ease of use. Within
-              JetBrains Webstorm, the frontend is built using HTML, CSS, and
-              vanilla JavaScript, supported by Chart.js for dynamic data
-              visualization and Bootstrap for responsive design and interactive
-              components. Styling incorporates CSS variables for theme
-              customization, Flexbox for layout responsiveness, and animations
-              to enhance the user interface. Features such as dark mode, dynamic
-              charts, and interactive modals contribute to a user-friendly and
-              visually appealing design. The backend uses Node.js as its runtime
-              environment, with Express.js serving as the web framework to
-              handle HTTP requests and API endpoints. User authentication is
-              secured using Passport.js with Google OAuth 2.0, while
-              jsonwebtoken manages token-based authentication for secure API
-              interactions. Persistent data storage is handled by MySQL,
-              offering enhanced performance and promise-based API capabilities.
-              Middleware such as cors facilitates cross-origin requests, and
-              dotenv ensures secure environment variable management.
-            </p>
+
+          <div className="space-y-8 mt-6">
+            <figure>
+              <Image
+                src="/scrum.png"
+                alt="Scrum Process Flow Diagram"
+                width={1650}
+                height={311}
+                className="w-full max-w-4xl mx-auto mt-10 mb-2"
+              />
+              <figcaption className="text-center italic">
+                Design Framework: Scrum Agile Methodology
+              </figcaption>
+            </figure>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* project management */}
+              <div className="bg-gray-50 rounded-lg p-5 shadow-sm border border-gray-200">
+                <h5 className="text-lg font-medium mb-2">Project Management</h5>
+                <ul className="list-disc list-inside text-gray-700 space-y-1">
+                  <li>Asana for backlog and timeline tracking</li>
+                </ul>
+              </div>
+
+              {/* Design Tools */}
+              <div className="bg-gray-50 rounded-lg p-5 shadow-sm border border-gray-200">
+                <h5 className="text-lg font-medium mb-2">🎨 Design Tools</h5>
+                <ul className="list-disc list-inside text-gray-700 space-y-1">
+                  <li>Draw.io for architecture and sequence diagrams</li>
+                </ul>
+              </div>
+
+              {/* Frontend */}
+              <div className="bg-gray-50 rounded-lg p-5 shadow-sm border border-gray-200">
+                <h5 className="text-lg font-medium mb-2">🧩 Frontend</h5>
+                <ul className="list-disc list-inside text-gray-700 space-y-1">
+                  <li>HTML, CSS, and vanilla JS in WebStorm</li>
+                  <li>Chart.js for interactive data visualizations</li>
+                  <li>Bootstrap for layout and UI components</li>
+                  <li>CSS Variables, Flexbox, and animations</li>
+                  <li>Dark mode and responsive design</li>
+                </ul>
+              </div>
+
+              {/* Backend */}
+              <div className="bg-gray-50 rounded-lg p-5 shadow-sm border border-gray-200">
+                <h5 className="text-lg font-medium mb-2">⚙️ Backend</h5>
+                <ul className="list-disc list-inside text-gray-700 space-y-1">
+                  <li>Node.js with Express.js</li>
+                  <li>Passport.js with Google OAuth 2.0</li>
+                  <li>jsonwebtoken for secure APIs</li>
+                  <li>MySQL for persistent data</li>
+                  <li>cors and dotenv for middleware/security</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </details>
+        <hr></hr>
 
         <details id="requirements-analysis" className="group">
           <summary className="flex items-center gap-2 cursor-pointer">
@@ -190,7 +214,7 @@ const page = () => {
               viewBox="0 0 24 24"
               strokeWidth={2.5}
               stroke="currentColor"
-              className="size-6 transition-transform duration-300 group-open:rotate-90 stroke-foreground"
+              className="size-6 transition-transform duration-300 group-open:rotate-90 stroke-primary"
             >
               <path
                 strokeLinecap="round"
@@ -200,154 +224,207 @@ const page = () => {
             </svg>
             <h3>Requirements Analysis</h3>
           </summary>
-          <div>
-            <h5>Functional Requirements</h5>
-            <ul className="list-disc">
-              <li>The system shall allow users to add and delete expenses.</li>
-              <li>
-                The system shall provide filtering capabilities for expense
-                history by category, date, and timeframe.
-              </li>
-              <li>
-                The system shall enable data visualization using charts (e.g.,
-                pie charts for category-wise distribution and line charts for
-                expense trends over time).
-              </li>
-              <li>
-                The system shall authenticate users securely with login and
-                registration features.
-              </li>
-              <li>
-                The system shall allow exporting expense data for offline
-                analysis.
-              </li>
-            </ul>
-            <h5>Non-Functional Requirements</h5>
-            <ul className="list-disc">
-              <li>
-                The system shall ensure high performance with fast page loading
-                times (less than 2 seconds).
-              </li>
-              <li>
-                The system shall ensure 99.9% system uptime and reliability.
-              </li>
-              <li>
-                The system shall build a modular architecture for easy
-                maintainability and scalability.
-              </li>
-            </ul>
 
-            <h5>Potential Stakeholders</h5>
-            <table className="table-auto">
-              <thead>
-                <tr>
-                  <th>Stakeholder</th>
-                  <th>Role</th>
-                  <th>Needs</th>
-                  <th>Expectations</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>End Users (Individual Users)</td>
-                  <td>Primary users of the app.</td>
-                  <td>
-                    <ul className="list-disc">
-                      <li>Simple, user-friendly interface.</li>
-                      <li>
-                        Ability to track expenses, categorize them, and view
-                        reports.
-                      </li>
-                    </ul>
-                  </td>
-                  <td>
-                    <ul>
-                      <li>Regular updates and bud fixes.</li>
-                      <li>Data accuracy and reliability.</li>
-                      <li>Security of personal data.</li>
-                    </ul>
-                  </td>
-                </tr>
+          {/* requirements section */}
+          <div className="flex flex-wrap md:flex-nowrap gap-5 my-10">
+            <div className="card p-4 md:basis-3/5">
+              <h5>Functional Requirements</h5>
+              <div className="mt-4 mx-4">
+                <p>The system shall...</p>
+                <ul className="list-disc list-inside mx-5">
+                  <li>allow users to add and delete expenses.</li>
+                  <li>
+                    provide filtering capabilities for expense history by
+                    category, date, and timeframe.
+                  </li>
+                  <li>
+                    enable data visualization using charts (e.g., pie charts for
+                    category-wise distribution and line charts for expense
+                    trends over time).
+                  </li>
+                  <li>
+                    authenticate users securely with login and registration
+                    features.
+                  </li>
+                  <li>allow exporting expense data for offline analysis.</li>
+                </ul>
+              </div>
+            </div>
+            <div className="card p-4 md:basis-2/5">
+              <h5>Non-Functional Requirements</h5>
+              <div className="mt-4 mx-4">
+                <p>The system shall...</p>
+                <ul className="list-disc list-inside mx-5">
+                  <li>
+                    ensure high performance with fast page loading times (less
+                    than 2 seconds).
+                  </li>
+                  <li>ensure 99.9% system uptime and reliability.</li>
+                  <li>
+                    build a modular architecture for easy maintainability and
+                    scalability.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          {/* stakeholder analysis section */}
+          <div className="my-10">
+            <h5 className="mb-2">Stakeholder Analysis</h5>
+            <div className="card w-full">
+              {/* stakeholder tabs */}
+              <ul className="flex flex-wrap text-center border-b border-gray-300">
+                <li className="me-1">
+                  <button
+                    onClick={() => setActiveTab("individual-users")}
+                    className={`inline-block p-4 cursor-pointer transition rounded-ss-lg ${
+                      activeTab === "individual-users"
+                        ? "text-background bg-primary"
+                        : "hover:text-background hover:bg-primary"
+                    }`}
+                  >
+                    Individual Users
+                  </button>
+                </li>
+                <li className="me-1">
+                  <button
+                    onClick={() => setActiveTab("small-businesses")}
+                    className={`inline-block p-4 cursor-pointer transition ${
+                      activeTab === "small-businesses"
+                        ? "text-background bg-primary"
+                        : "hover:text-background hover:bg-primary"
+                    }`}
+                  >
+                    Small Businesses
+                  </button>
+                </li>
+                <li className="me-1">
+                  <button
+                    onClick={() => setActiveTab("development-team")}
+                    className={`inline-block p-4 cursor-pointer transition ${
+                      activeTab === "development-team"
+                        ? "text-background bg-primary"
+                        : "hover:text-background hover:bg-primary"
+                    }`}
+                  >
+                    Development Team
+                  </button>
+                </li>
+                <li className="me-1">
+                  <button
+                    onClick={() => setActiveTab("product-owner")}
+                    className={`inline-block p-4 cursor-pointer transition ${
+                      activeTab === "product-owner"
+                        ? "text-background bg-primary"
+                        : "hover:text-background hover:bg-primary"
+                    }`}
+                  >
+                    Product Owner
+                  </button>
+                </li>
+                <li className="me-1">
+                  <button
+                    onClick={() => setActiveTab("investors")}
+                    className={`inline-block p-4 cursor-pointer transition ${
+                      activeTab === "investors"
+                        ? "text-background bg-primary"
+                        : "hover:text-background hover:bg-primary"
+                    }`}
+                  >
+                    Investors
+                  </button>
+                </li>
+              </ul>
 
-                <tr>
-                  <td>End Users (Small Businesses)</td>
-                  <td>Uses the app for expense and budget management.</td>
-                  <td>
-                    <ul className="list-disc">
-                      <li>
-                        Customization for business needs (e.g., export features,
-                        multiple accounts).
-                      </li>
-                      <li>Expense analysis.</li>
-                    </ul>
-                  </td>
-                  <td>
-                    <ul>
-                      <li>
-                        Support for tax calculations, accounting features.
-                      </li>
-                      <li>Reliable performance and data handling.</li>
-                    </ul>
-                  </td>
-                </tr>
+              {/* stakeholder content */}
+              <div className="p-4 bg-white rounded-lg mt-4">
+                {activeTab === "individual-users" && (
+                  <div>
+                    <p>
+                      <b>Role:</b> Primary end users
+                    </p>
+                    <p>
+                      <b>Needs:</b> Simple, user-friendly interface. Ability to
+                      track expenses, categorize them, and view reports.
+                    </p>
+                    <p>
+                      <b>Expectations:</b> Regular updates and bug fixes Data
+                      accuracy and reliability. Security of personal data.
+                    </p>
+                  </div>
+                )}
 
-                <tr>
-                  <td>Development Team</td>
-                  <td>Designs, builds, and maintains the app.</td>
-                  <td>
-                    <ul className="list-disc">
-                      <li>Clear requirements and feedback.</li>
-                      <li>
-                        Adequate resources to develop features and fix bugs.
-                      </li>
-                    </ul>
-                  </td>
-                  <td>
-                    <ul>
-                      <li>Collaboration with stakeholders.</li>
-                      <li>Clear timelines and goals.</li>
-                      <li>Proper testing infrastructure.</li>
-                    </ul>
-                  </td>
-                </tr>
+                {activeTab === "small-businesses" && (
+                  <div>
+                    <p>
+                      <b>Role:</b> Uses the app for expense and budget
+                      management.
+                    </p>
+                    <p>
+                      <b>Needs:</b> Customization for business needs (e.g.,
+                      export features, multiple accounts). Expense analysis.
+                    </p>
+                    <p>
+                      <b>Expectations:</b> Support for tax calculations,
+                      accounting features. Reliable performance and data
+                      handling.
+                    </p>
+                  </div>
+                )}
 
-                <tr>
-                  <td>Product Owner/Business Stakeholders</td>
-                  <td>Manages the product vision and priorities.</td>
-                  <td>
-                    <ul className="list-disc">
-                      <li>Features that meet market demands.</li>
-                      <li>Cost-effective development.</li>
-                    </ul>
-                  </td>
-                  <td>
-                    <ul>
-                      <li>Deliver a working product that meets user needs.</li>
-                      <li>Regular progress updates.</li>
-                      <li>High product quality.</li>
-                    </ul>
-                  </td>
-                </tr>
+                {activeTab === "development-team" && (
+                  <div>
+                    <p>
+                      <b>Role:</b> Designs, builds, and maintains the app.
+                    </p>
+                    <p>
+                      <b>Needs:</b> Clear requirements and feedback.Adequate
+                      resources to develop features and fix bugs.
+                    </p>
+                    <p>
+                      <b>Expectations:</b> Collaboration with stakeholders.
+                      Clear timelines and goals. Proper testing infrastructure.
+                    </p>
+                  </div>
+                )}
 
-                <tr>
-                  <td>Investors</td>
-                  <td>Fund the development and growth of the app.</td>
-                  <td>
-                    <ul className="list-disc">
-                      <li>Profitability or high user adoption.</li>
-                      <li>Sustainable business model.</li>
-                    </ul>
-                  </td>
-                  <td>
-                    <ul>
-                      <li>Regular financial reports and projections. </li>
-                      <li>Return on investment.</li>
-                    </ul>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                {activeTab === "product-owner" && (
+                  <div>
+                    <p>
+                      <b>Role:</b> Manages the product vision and priorities.
+                    </p>
+                    <p>
+                      <b>Needs:</b> Features that meet market
+                      demands.Cost-effective development.
+                    </p>
+                    <p>
+                      <b>Expectations:</b> Deliver a working product that meets
+                      user needs. Regular progress updates. High product
+                      quality.
+                    </p>
+                  </div>
+                )}
 
+                {activeTab === "investors" && (
+                  <div>
+                    <p>
+                      <b>Role:</b> Fund the development and growth of the app.
+                    </p>
+                    <p>
+                      <b>Needs:</b> Profitability or high user adoption.
+                      Sustainable business model.
+                    </p>
+                    <p>
+                      <b>Expectations:</b> Regular financial reports and
+                      projections. Return on investment.
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+          {/* use cases section */}
+          <div className="my-10">
             <h5>Use Cases</h5>
             <p className="underline">Sign Up and Add/Delete Expense</p>
             <p>
@@ -364,6 +441,7 @@ const page = () => {
               by clicking the "Delete" button next to the corresponding log
               entry.
             </p>
+
             <p className="underline">
               Login and Apply Filters to Existing Expense History
             </p>
@@ -397,6 +475,7 @@ const page = () => {
             </p>
           </div>
         </details>
+        <hr></hr>
 
         <details id="system-design" className="group">
           <summary className="flex items-center gap-2 cursor-pointer">
@@ -406,7 +485,7 @@ const page = () => {
               viewBox="0 0 24 24"
               strokeWidth={2.5}
               stroke="currentColor"
-              className="size-6 transition-transform duration-300 group-open:rotate-90 stroke-foreground"
+              className="size-6 transition-transform duration-300 group-open:rotate-90 stroke-primary"
             >
               <path
                 strokeLinecap="round"
@@ -459,6 +538,7 @@ const page = () => {
             </div>
           </div>
         </details>
+        <hr></hr>
 
         <details id="implementation" className="group">
           <summary className="flex items-center gap-2 cursor-pointer">
@@ -468,7 +548,7 @@ const page = () => {
               viewBox="0 0 24 24"
               strokeWidth={2.5}
               stroke="currentColor"
-              className="size-6 transition-transform duration-300 group-open:rotate-90 stroke-foreground"
+              className="size-6 transition-transform duration-300 group-open:rotate-90 stroke-primary"
             >
               <path
                 strokeLinecap="round"
@@ -561,6 +641,7 @@ const page = () => {
             </ol>
           </div>
         </details>
+        <hr></hr>
 
         <details id="testing" className="group">
           <summary className="flex items-center gap-2 cursor-pointer">
@@ -570,7 +651,7 @@ const page = () => {
               viewBox="0 0 24 24"
               strokeWidth={2.5}
               stroke="currentColor"
-              className="size-6 transition-transform duration-300 group-open:rotate-90 stroke-foreground"
+              className="size-6 transition-transform duration-300 group-open:rotate-90 stroke-primary"
             >
               <path
                 strokeLinecap="round"
@@ -584,6 +665,7 @@ const page = () => {
             <h5></h5>
           </div>
         </details>
+        <hr></hr>
 
         <details id="maintenance" className="group">
           <summary className="flex items-center gap-2 cursor-pointer">
@@ -593,7 +675,7 @@ const page = () => {
               viewBox="0 0 24 24"
               strokeWidth={2.5}
               stroke="currentColor"
-              className="size-6 transition-transform duration-300 group-open:rotate-90 stroke-foreground"
+              className="size-6 transition-transform duration-300 group-open:rotate-90 stroke-primary"
             >
               <path
                 strokeLinecap="round"
@@ -669,6 +751,7 @@ const page = () => {
             </ul>
           </div>
         </details>
+        <hr></hr>
 
         <details id="timeline" className="group">
           <summary className="flex items-center gap-2 cursor-pointer">
@@ -678,7 +761,7 @@ const page = () => {
               viewBox="0 0 24 24"
               strokeWidth={2.5}
               stroke="currentColor"
-              className="size-6 transition-transform duration-300 group-open:rotate-90 stroke-foreground"
+              className="size-6 transition-transform duration-300 group-open:rotate-90 stroke-primary"
             >
               <path
                 strokeLinecap="round"
@@ -741,6 +824,7 @@ const page = () => {
             </ul>
           </div>
         </details>
+        <hr></hr>
 
         <details id="conclusion" className="group">
           <summary className="flex items-center gap-2 cursor-pointer">
@@ -750,7 +834,7 @@ const page = () => {
               viewBox="0 0 24 24"
               strokeWidth={2.5}
               stroke="currentColor"
-              className="size-6 transition-transform duration-300 group-open:rotate-90 stroke-foreground"
+              className="size-6 transition-transform duration-300 group-open:rotate-90 stroke-primary"
             >
               <path
                 strokeLinecap="round"
@@ -841,6 +925,7 @@ const page = () => {
             </p>
           </div>
         </details>
+        <hr></hr>
       </main>
     </div>
   );
