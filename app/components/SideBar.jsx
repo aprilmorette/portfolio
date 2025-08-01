@@ -1,5 +1,4 @@
 'use client';
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const Sidebar = ({ sections, id }) => {
@@ -39,7 +38,7 @@ const Sidebar = ({ sections, id }) => {
       >
         {/* logo */}
         <a href="/" className="block">
-          <Image
+          <img
             src="/logo.svg"
             alt="April Duff logo"
             width={128}
