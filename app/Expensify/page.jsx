@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
 import Sidebar from "../components/SideBar";
 
 const sections = [
@@ -15,8 +14,9 @@ const sections = [
   { id: "conclusion", label: "conclusion" },
 ];
 
-const page = () => {
+export default function Page() {
   const [activeTab, setActiveTab] = useState("individual-users");
+
   return (
     <div id="project" className="flex justify-center">
       {/* sidebar for large screens 
@@ -33,8 +33,7 @@ const page = () => {
             <video
               className="w-lg md:w-2xl lg:w-4xl h-auto rounded-lg shadow-sm"
               controls
-            >
-            </video>
+            ></video>
             <div className="flex flex-col justify-between gap-y-10 xl:basis-1/2">
               <hgroup>
                 <h5>Description</h5>
@@ -125,8 +124,8 @@ const page = () => {
               <p>3-month semester long project</p>
             </div>
           </div>
+          <hr></hr>
         </section>
-        <hr></hr>
 
         <details id="design-process" className="group">
           <summary className="flex items-center gap-2 cursor-pointer">
@@ -146,15 +145,14 @@ const page = () => {
             </svg>
             <h3>Design Process</h3>
           </summary>
-
           <div className="space-y-8 mt-6">
             <figure>
-              <Image
+              <img
                 src="/scrum.png"
                 alt="Scrum Process Flow Diagram"
                 width={1650}
                 height={311}
-                className="w-full max-w-4xl mx-auto mt-10 mb-2"
+                className="w-full max-w-4xl mx-auto"
               />
               <figcaption className="text-center italic">
                 Design Framework: Scrum Agile Methodology
@@ -231,7 +229,7 @@ const page = () => {
               <h5>Functional Requirements</h5>
               <div className="mt-4 mx-4">
                 <p>The system shall...</p>
-                <ul className="list-disc list-inside mx-5">
+                <ul className="list-disc mx-5">
                   <li>allow users to add and delete expenses.</li>
                   <li>
                     provide filtering capabilities for expense history by
@@ -254,7 +252,7 @@ const page = () => {
               <h5>Non-Functional Requirements</h5>
               <div className="mt-4 mx-4">
                 <p>The system shall...</p>
-                <ul className="list-disc list-inside mx-5">
+                <ul className="list-disc mx-5">
                   <li>
                     ensure high performance with fast page loading times (less
                     than 2 seconds).
@@ -273,11 +271,11 @@ const page = () => {
             <h5 className="mb-2">Stakeholder Analysis</h5>
             <div className="card w-full">
               {/* stakeholder tabs */}
-              <ul className="flex flex-wrap text-center border-b border-gray-300">
+              <ul className="flex flex-wrap text-center border-b border-accent">
                 <li className="me-1">
                   <button
                     onClick={() => setActiveTab("individual-users")}
-                    className={`inline-block p-4 cursor-pointer transition rounded-ss-lg ${
+                    className={`inline-block p-2 md:p-4 cursor-pointer transition rounded-t-lg ${
                       activeTab === "individual-users"
                         ? "text-background bg-primary"
                         : "hover:text-background hover:bg-primary"
@@ -289,7 +287,7 @@ const page = () => {
                 <li className="me-1">
                   <button
                     onClick={() => setActiveTab("small-businesses")}
-                    className={`inline-block p-4 cursor-pointer transition ${
+                    className={`inline-block p-2 md:p-4 cursor-pointer transition rounded-t-lg ${
                       activeTab === "small-businesses"
                         ? "text-background bg-primary"
                         : "hover:text-background hover:bg-primary"
@@ -301,7 +299,7 @@ const page = () => {
                 <li className="me-1">
                   <button
                     onClick={() => setActiveTab("development-team")}
-                    className={`inline-block p-4 cursor-pointer transition ${
+                    className={`inline-block p-2 md:p-4 cursor-pointer transition rounded-t-lg ${
                       activeTab === "development-team"
                         ? "text-background bg-primary"
                         : "hover:text-background hover:bg-primary"
@@ -313,7 +311,7 @@ const page = () => {
                 <li className="me-1">
                   <button
                     onClick={() => setActiveTab("product-owner")}
-                    className={`inline-block p-4 cursor-pointer transition ${
+                    className={`inline-block p-2 md:p-4 cursor-pointer transition rounded-t-lg ${
                       activeTab === "product-owner"
                         ? "text-background bg-primary"
                         : "hover:text-background hover:bg-primary"
@@ -325,7 +323,7 @@ const page = () => {
                 <li className="me-1">
                   <button
                     onClick={() => setActiveTab("investors")}
-                    className={`inline-block p-4 cursor-pointer transition ${
+                    className={`inline-block p-2 md:p-4 cursor-pointer transition rounded-t-lg ${
                       activeTab === "investors"
                         ? "text-background bg-primary"
                         : "hover:text-background hover:bg-primary"
@@ -337,87 +335,119 @@ const page = () => {
               </ul>
 
               {/* stakeholder content */}
-              <div className="p-4 bg-white rounded-lg mt-4">
+              <div className="p-4 rounded-lg">
                 {activeTab === "individual-users" && (
-                  <div>
-                    <p>
-                      <b>Role:</b> Primary end users
-                    </p>
-                    <p>
-                      <b>Needs:</b> Simple, user-friendly interface. Ability to
-                      track expenses, categorize them, and view reports.
-                    </p>
-                    <p>
-                      <b>Expectations:</b> Regular updates and bug fixes Data
-                      accuracy and reliability. Security of personal data.
-                    </p>
+                  <div className="flex flex-col gap-4 md:flex-row md:gap-8">
+                    <div className="md:basis-1/3">
+                      <p className="font-semibold">ROLE</p>
+                      <p>Primary end users</p>
+                    </div>
+                    <div className="md:basis-1/3">
+                      <p className="font-semibold">NEEDS</p>
+                      <p>
+                        Simple, user-friendly interface. Ability to track
+                        expenses, categorize them, and view reports.
+                      </p>
+                    </div>
+                    <div className="md:basis-1/3">
+                      <p className="font-semibold">EXPECTATIONS</p>
+                      <p>
+                        Regular updates and bug fixes. Data accuracy and
+                        reliability. Security of personal data.
+                      </p>
+                    </div>
                   </div>
                 )}
 
                 {activeTab === "small-businesses" && (
-                  <div>
-                    <p>
-                      <b>Role:</b> Uses the app for expense and budget
-                      management.
-                    </p>
-                    <p>
-                      <b>Needs:</b> Customization for business needs (e.g.,
-                      export features, multiple accounts). Expense analysis.
-                    </p>
-                    <p>
-                      <b>Expectations:</b> Support for tax calculations,
-                      accounting features. Reliable performance and data
-                      handling.
-                    </p>
+                  <div className="flex flex-col gap-4 md:flex-row md:gap-8">
+                    <div className="md:basis-1/3">
+                      <p className="font-semibold">ROLE</p>
+                      <p>Uses the app for expense and budget management.</p>
+                    </div>
+                    <div className="md:basis-1/3">
+                      <p className="font-semibold">NEEDS</p>
+                      <p>
+                        Customization for business needs (e.g., export features,
+                        multiple accounts). Expense analysis.
+                      </p>
+                    </div>
+                    <div className="md:basis-1/3">
+                      <p className="font-semibold">EXPECTATIONS</p>
+                      <p>
+                        Support for tax calculations, accounting features.
+                        Reliable performance and data handling.
+                      </p>
+                    </div>
                   </div>
                 )}
 
                 {activeTab === "development-team" && (
-                  <div>
-                    <p>
-                      <b>Role:</b> Designs, builds, and maintains the app.
-                    </p>
-                    <p>
-                      <b>Needs:</b> Clear requirements and feedback.Adequate
-                      resources to develop features and fix bugs.
-                    </p>
-                    <p>
-                      <b>Expectations:</b> Collaboration with stakeholders.
-                      Clear timelines and goals. Proper testing infrastructure.
-                    </p>
+                  <div className="flex flex-col gap-4 md:flex-row md:gap-8">
+                    <div className="md:basis-1/3">
+                      <p className="font-semibold">ROLE</p>
+                      <p>Designs, builds, and maintains the app.</p>
+                    </div>
+                    <div className="md:basis-1/3">
+                      <p className="font-semibold">NEEDS</p>
+                      <p>
+                        Clear requirements and feedback. Adequate resources to
+                        develop features and fix bugs.
+                      </p>
+                    </div>
+                    <div className="md:basis-1/3">
+                      <p className="font-semibold">EXPECTATIONS</p>
+                      <p>
+                        Collaboration with stakeholders. Clear timelines and
+                        goals. Proper testing infrastructure.
+                      </p>
+                    </div>
                   </div>
                 )}
 
                 {activeTab === "product-owner" && (
-                  <div>
-                    <p>
-                      <b>Role:</b> Manages the product vision and priorities.
-                    </p>
-                    <p>
-                      <b>Needs:</b> Features that meet market
-                      demands.Cost-effective development.
-                    </p>
-                    <p>
-                      <b>Expectations:</b> Deliver a working product that meets
-                      user needs. Regular progress updates. High product
-                      quality.
-                    </p>
+                  <div className="flex flex-col gap-4 md:flex-row md:gap-8">
+                    <div className="md:basis-1/3">
+                      <p className="font-semibold">ROLE</p>
+                      <p>Manages the product vision and priorities.</p>
+                    </div>
+                    <div className="md:basis-1/3">
+                      <p className="font-semibold">NEEDS</p>
+                      <p>
+                        Features that meet market demands. Cost-effective
+                        development.
+                      </p>
+                    </div>
+                    <div className="md:basis-1/3">
+                      <p className="font-semibold">EXPECTATIONS</p>
+                      <p>
+                        Deliver a working product that meets user needs. Regular
+                        progress updates. High product quality.
+                      </p>
+                    </div>
                   </div>
                 )}
 
                 {activeTab === "investors" && (
-                  <div>
-                    <p>
-                      <b>Role:</b> Fund the development and growth of the app.
-                    </p>
-                    <p>
-                      <b>Needs:</b> Profitability or high user adoption.
-                      Sustainable business model.
-                    </p>
-                    <p>
-                      <b>Expectations:</b> Regular financial reports and
-                      projections. Return on investment.
-                    </p>
+                  <div className="flex flex-col gap-4 md:flex-row md:gap-8">
+                    <div className="md:basis-1/3">
+                      <p className="font-semibold">ROLE</p>
+                      <p>Fund the development and growth of the app.</p>
+                    </div>
+                    <div className="md:basis-1/3">
+                      <p className="font-semibold">NEEDS</p>
+                      <p>
+                        Profitability or high user adoption. Sustainable
+                        business model.
+                      </p>
+                    </div>
+                    <div className="md:basis-1/3">
+                      <p className="font-semibold">EXPECTATIONS</p>
+                      <p>
+                        Regular financial reports and projections. Return on
+                        investment.
+                      </p>
+                    </div>
                   </div>
                 )}
               </div>
@@ -495,45 +525,39 @@ const page = () => {
             </svg>
             <h3>System Design</h3>
           </summary>
-          <div className="flex">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
             <div>
-              <h5>Architecture</h5>
-              <Image
+              <h5 className="text-base font-medium mb-2">Architecture</h5>
+              <img
                 src="/architecture-diagram.png"
                 alt="Architecture Diagram"
-                width={300}
-                height={300}
-                className="w-[180px] md:w-[200px] lg:w-[300px] h-auto shadow-sm"
+                className="w-full h-auto rounded-md shadow-md"
               />
             </div>
             <div>
-              <h5>Component Diagram</h5>
-              <Image
+              <h5 className="text-base font-medium mb-2">Component Diagram</h5>
+              <img
                 src="/component-diagram.png"
                 alt="Component Diagram"
-                width={300}
-                height={300}
-                className="w-[180px] md:w-[200px] lg:w-[300px] h-auto shadow-sm"
+                className="w-full h-auto rounded-md shadow-md"
               />
             </div>
             <div>
-              <h5>Activity Diagram</h5>
-              <Image
+              <h5 className="text-base font-medium mb-2">Activity Diagram</h5>
+              <img
                 src="/activity-diagram.png"
                 alt="Activity Diagram"
-                width={300}
-                height={300}
-                className="w-[180px] md:w-[200px] lg:w-[300px] h-auto shadow-sm"
+                className="w-full h-auto rounded-md shadow-md"
               />
             </div>
             <div>
-              <h5>Graphical User Interface</h5>
-              <Image
+              <h5 className="text-base font-medium mb-2">
+                Graphical User Interface
+              </h5>
+              <img
                 src="/gui.png"
                 alt="Graphical User Interface"
-                width={300}
-                height={300}
-                className="w-[180px] md:w-[200px] lg:w-[300px] h-auto shadow-sm"
+                className="w-full h-auto rounded-md shadow-md"
               />
             </div>
           </div>
@@ -929,6 +953,4 @@ const page = () => {
       </main>
     </div>
   );
-};
-
-export default page;
+}
