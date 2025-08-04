@@ -1,4 +1,3 @@
-'use client';
 import React, { useEffect, useState } from "react";
 
 const Sidebar = ({ sections, id }) => {
@@ -43,7 +42,6 @@ const Sidebar = ({ sections, id }) => {
             alt="April Duff logo"
             width={128}
             height={56}
-            priority
             className="w-20 h-auto cursor-pointer"
           />
         </a>
