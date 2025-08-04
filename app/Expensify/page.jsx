@@ -161,24 +161,24 @@ export default function Page() {
 
             <div className="grid md:grid-cols-2 gap-6">
               {/* project management */}
-              <div className="bg-gray-50 rounded-lg p-5 shadow-sm border border-gray-200">
+              <div className="card p-5">
                 <h5 className="text-lg font-medium mb-2">Project Management</h5>
                 <ul className="list-disc list-inside text-gray-700 space-y-1">
                   <li>Asana for backlog and timeline tracking</li>
                 </ul>
               </div>
 
-              {/* Design Tools */}
-              <div className="bg-gray-50 rounded-lg p-5 shadow-sm border border-gray-200">
-                <h5 className="text-lg font-medium mb-2">🎨 Design Tools</h5>
+              {/* design Tools */}
+              <div className="card p-5">
+                <h5 className="text-lg font-medium mb-2">Design Tools</h5>
                 <ul className="list-disc list-inside text-gray-700 space-y-1">
                   <li>Draw.io for architecture and sequence diagrams</li>
                 </ul>
               </div>
 
-              {/* Frontend */}
-              <div className="bg-gray-50 rounded-lg p-5 shadow-sm border border-gray-200">
-                <h5 className="text-lg font-medium mb-2">🧩 Frontend</h5>
+              {/* frontend */}
+              <div className="card p-5">
+                <h5 className="text-lg font-medium mb-2">Frontend</h5>
                 <ul className="list-disc list-inside text-gray-700 space-y-1">
                   <li>HTML, CSS, and vanilla JS in WebStorm</li>
                   <li>Chart.js for interactive data visualizations</li>
@@ -188,9 +188,9 @@ export default function Page() {
                 </ul>
               </div>
 
-              {/* Backend */}
-              <div className="bg-gray-50 rounded-lg p-5 shadow-sm border border-gray-200">
-                <h5 className="text-lg font-medium mb-2">⚙️ Backend</h5>
+              {/* backend */}
+              <div className="card p-5">
+                <h5 className="text-lg font-medium mb-2">Backend</h5>
                 <ul className="list-disc list-inside text-gray-700 space-y-1">
                   <li>Node.js with Express.js</li>
                   <li>Passport.js with Google OAuth 2.0</li>
@@ -244,7 +244,6 @@ export default function Page() {
                     authenticate users securely with login and registration
                     features.
                   </li>
-                  <li>allow exporting expense data for offline analysis.</li>
                 </ul>
               </div>
             </div>
@@ -268,10 +267,10 @@ export default function Page() {
           </div>
           {/* stakeholder analysis section */}
           <div className="my-10">
-            <h5 className="mb-2">Stakeholder Analysis</h5>
             <div className="card w-full">
+              <h5 className="px-4 pt-4">Stakeholder Analysis</h5>
               {/* stakeholder tabs */}
-              <ul className="flex flex-wrap text-center border-b border-accent">
+              <ul className="flex flex-wrap text-center border-b border-accent mt-4">
                 <li className="me-1">
                   <button
                     onClick={() => setActiveTab("individual-users")}
@@ -335,7 +334,7 @@ export default function Page() {
               </ul>
 
               {/* stakeholder content */}
-              <div className="p-4 rounded-lg">
+              <div className="p-4">
                 {activeTab === "individual-users" && (
                   <div className="flex flex-col gap-4 md:flex-row md:gap-8">
                     <div className="md:basis-1/3">
@@ -454,55 +453,63 @@ export default function Page() {
             </div>
           </div>
           {/* use cases section */}
-          <div className="my-10">
+          <div className="my-10 card p-4">
             <h5>Use Cases</h5>
-            <p className="underline">Sign Up and Add/Delete Expense</p>
-            <p>
-              The user begins by signing up for Expensify using their Google
-              account and logging into the application. To add an expense to
-              their history, the user specifies the category, amount, and date
-              in the designated fields. If any of these fields are left blank,
-              the system notifies the user to complete all required inputs. Once
-              all fields are filled and the user clicks the "Add" button, the
-              expense is stored in the database. The system immediately updates
-              the user interface to display the newly added expense at the top
-              of the expense history, along with an updated total amount for all
-              logged expenses. The user then deletes the newly created expense
-              by clicking the "Delete" button next to the corresponding log
-              entry.
-            </p>
+            <div className="m-4">
+              <p className="underline">Sign Up and Add/Delete Expense</p>
+              <p>
+                The user begins by signing up for Expensify using their Google
+                account and logging into the application. To add an expense to
+                their history, the user specifies the category, amount, and date
+                in the designated fields. If any of these fields are left blank,
+                the system notifies the user to complete all required inputs.
+                Once all fields are filled and the user clicks the "Add" button,
+                the expense is stored in the database. The system immediately
+                updates the user interface to display the newly added expense at
+                the top of the expense history, along with an updated total
+                amount for all logged expenses. The user then deletes the newly
+                created expense by clicking the "Delete" button next to the
+                corresponding log entry.
+              </p>
+            </div>
 
-            <p className="underline">
-              Login and Apply Filters to Existing Expense History
-            </p>
-            <p>
-              After logging into Expensify with their Google account, the user
-              is presented with their full expense history. To narrow down the
-              displayed records, the user clicks the "Filter" button, which
-              opens a dialog box offering three filter options: category,
-              specific date, and timeframe. The user selects the categories
-              "Education" and "Rent" and chooses the timeframe "Last 7 Days." By
-              clicking "Apply Filters," the system updates the view to show all
-              expenses that fall under either education or rent logged in the
-              past week. To return to the complete expense history, the user
-              clicks the "Filter" button again and selects "Reset Filters,"
-              restoring the unfiltered view of all logged expenses.
-            </p>
-            <p className="underline">
-              Login, Generate Graphical Insight and Sign Out
-            </p>
-            <p>
-              When the user logs into Expensify, the system displays their
-              expense history associated with their Google account. To analyze
-              their spending, the user clicks the "Monthly Expenditure by
-              Category" option. The system prompts the user to select a specific
-              month. Upon selecting "March," a bar chart is generated, visually
-              representing all expenses logged during the month, categorized on
-              the x-axis and with the y-axis indicating the corresponding
-              amounts. Once the user is finished reviewing the data, they click
-              the "Sign Out" button. The system logs the user out and redirects
-              them to the homepage, ensuring their session is securely ended.
-            </p>
+            <div className="m-4">
+              <p className="underline">
+                Login and Apply Filters to Existing Expense History
+              </p>
+              <p>
+                After logging into Expensify with their Google account, the user
+                is presented with their full expense history. To narrow down the
+                displayed records, the user clicks the "Filter" button, which
+                opens a dialog box offering three filter options: category,
+                specific date, and timeframe. The user selects the categories
+                "Education" and "Rent" and chooses the timeframe "Last 7 Days."
+                By clicking "Apply Filters," the system updates the view to show
+                all expenses that fall under either education or rent logged in
+                the past week. To return to the complete expense history, the
+                user clicks the "Filter" button again and selects "Reset
+                Filters," restoring the unfiltered view of all logged expenses.
+              </p>
+            </div>
+
+            <div className="m-4">
+              <p className="underline">
+                Login, Generate Graphical Insight and Sign Out
+              </p>
+              <p>
+                When the user logs into Expensify, the system displays their
+                expense history associated with their Google account. To analyze
+                their spending, the user clicks the "Monthly Expenditure by
+                Category" option. The system prompts the user to select a
+                specific month. Upon selecting "March," a bar chart is
+                generated, visually representing all expenses logged during the
+                month, categorized on the x-axis and with the y-axis indicating
+                the corresponding amounts. Once the user is finished reviewing
+                the data, they click the "Sign Out" button. The system logs the
+                user out and redirects them to the homepage, ensuring their
+                session is securely ended.
+              </p>
+            </div>
           </div>
         </details>
         <hr></hr>
