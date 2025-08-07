@@ -258,7 +258,7 @@ export default function Page() {
                   </li>
                   <li>ensure 99.9% system uptime and reliability.</li>
                   <li>
-                    build a modular architecture for easy maintainability and
+                    have a modular architecture for easy maintainability and
                     scalability.
                   </li>
                 </ul>
@@ -532,9 +532,9 @@ export default function Page() {
             </svg>
             <h3>System Design</h3>
           </summary>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-10">
             <div>
-              <h5 className="text-base font-medium mb-2">Architecture</h5>
+              <h5>Architecture</h5>
               <img
                 src="/architecture-diagram.png"
                 alt="Architecture Diagram"
@@ -542,7 +542,7 @@ export default function Page() {
               />
             </div>
             <div>
-              <h5 className="text-base font-medium mb-2">Component Diagram</h5>
+              <h5>Component Diagram</h5>
               <img
                 src="/component-diagram.png"
                 alt="Component Diagram"
@@ -550,7 +550,7 @@ export default function Page() {
               />
             </div>
             <div>
-              <h5 className="text-base font-medium mb-2">Activity Diagram</h5>
+              <h5>Activity Diagram</h5>
               <img
                 src="/activity-diagram.png"
                 alt="Activity Diagram"
@@ -558,12 +558,18 @@ export default function Page() {
               />
             </div>
             <div>
-              <h5 className="text-base font-medium mb-2">
-                Graphical User Interface
-              </h5>
+              <h5>Graphical User Interface</h5>
               <img
                 src="/gui.png"
                 alt="Graphical User Interface"
+                className="w-full h-auto rounded-md shadow-md"
+              />
+            </div>
+            <div>
+              <h5>Class Diagram</h5>
+              <img
+                src="/class-diagram.png"
+                alt="Class Diagram"
                 className="w-full h-auto rounded-md shadow-md"
               />
             </div>
@@ -589,7 +595,7 @@ export default function Page() {
             </svg>
             <h3>Implementation</h3>
           </summary>
-          <div>
+          <div className="my-10">
             <h5>Code Structure</h5>
             <p>
               The code for Expensify is organized into several distinct modules,
@@ -692,7 +698,7 @@ export default function Page() {
             </svg>
             <h3>Testing</h3>
           </summary>
-          <div>
+          <div className="my-10">
             <h5></h5>
           </div>
         </details>
@@ -716,7 +722,7 @@ export default function Page() {
             </svg>
             <h3>Maintenance & Future Work</h3>
           </summary>
-          <div>
+          <div className="my-10">
             <h5>Future Enhancements</h5>
             <ul className="list-disc">
               <li>
@@ -802,7 +808,7 @@ export default function Page() {
             </svg>
             <h3>Timeline</h3>
           </summary>
-          <div>
+          <div className="my-10">
             <ul className="relative border-l-2 border-accent">
               {/* Sprint One */}
               <li className="mb-10 ms-4">
@@ -875,7 +881,7 @@ export default function Page() {
             </svg>
             <h3>Conclusion</h3>
           </summary>
-          <div>
+          <div className="my-10">
             <p>
               The Expensify project successfully achieved its primary goal of
               creating an intuitive, secure, and efficient platform for users to
