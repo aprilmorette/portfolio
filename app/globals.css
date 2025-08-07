@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-heading: "Playfair Display", serif;
+  --font-heading: "Inter", sans-serif;
   --font-body: "Quicksand", sans-serif;
 
   --color-background: #f6f7f2; /* text */
@@ -151,18 +151,19 @@ hr {
 }
 
 #home-nav .link {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   letter-spacing: 0.025em;
   font-size: 1.5rem;
   line-height: var(--tw-leading, var(--text-2xl--line-height));
 }
 
 #expensify-nav .link {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
+
   letter-spacing: 0.025em;
-  font-size: 1.35rem;
+  font-size: var(--text-lg);
   font-weight: 500;
-  line-height: var(--tw-leading, var(--text-2xl--line-height));
+  line-height: var(--tw-leading, var(--text-lg--line-height));
 }
 
 /*** link animations ***/

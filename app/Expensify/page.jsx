@@ -18,11 +18,11 @@ export default function Page() {
   const [activeTab, setActiveTab] = useState("individual-users");
 
   return (
-    <div id="project" className="flex justify-center">
-      {/* sidebar for large screens 
-      <aside className="hidden lg:block w-64 sticky top-0 h-screen">
+    <div id="project" className="flex">
+      {/* sidebar for large screens */}
+      <aside className="hidden lg:block sticky top-0 h-screen">
         <Sidebar id="expensify-nav" sections={sections} />
-      </aside> */}
+      </aside> 
 
       {/* main content */}
       <main className="pt-10 max-w-6xl mx-10">
