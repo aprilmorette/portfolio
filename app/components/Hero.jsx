@@ -1,9 +1,6 @@
 import { useEffect } from "react";
 
 const Hero = () => {
-  useEffect(() => {
-    // Trigger reflow for CSS animation when mounted (optional)
-  }, []);
 
   return (
     <section
