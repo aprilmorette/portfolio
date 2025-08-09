@@ -75,7 +75,7 @@ export default function Home() {
             : "opacity-0 translate-y-5 pointer-events-none"
         }`}
       >
-        <div className="transition-all hidden md:flex duration-700 sticky top-0 left-0 h-screen w-[16rem] z-50">
+        <div className="transition-all hidden md:flex duration-700 sticky top-0 left-0 h-screen z-50">
           <SideBar id="home-nav"
             sections={[
               { id: "about", label: "about me", icon: (<svg

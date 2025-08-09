@@ -32,7 +32,7 @@ const Sidebar = ({ sections, id }) => {
       {/* sidebar for larger screens */}
       <aside
         id={id}
-        className="w-55 h-screen p-4 flex flex-col"
+        className="h-screen p-4 flex flex-col"
         aria-label="Side navigation bar"
       >
         {/* logo */}
@@ -53,7 +53,7 @@ const Sidebar = ({ sections, id }) => {
             <li key={id}>
               <a
                 href={`#${id}`}
-                className={`link relative inline-flex items-center gap-3 transition-colors duration-300 ${
+                className={`link relative flex items-start gap-3 transition-colors duration-300 ${
                   activeSection === id ? "text-foreground font-semibold active-underline" : ""
                 }`}
               >
