@@ -7,7 +7,8 @@ const About = () => {
     <section id="about" className="px-4 pt-10 pb-15 max-w-6xl mx-auto">
       <h2 className="text-center mb-5">about me</h2>
 
-      <div className="card pop-in opacity-0 scale-0 transition-all duration-1500 flex flex-col lg:flex-row items-center justify-around p-8 gap-5">
+      {/* picture and bio */}
+      <div className="card pop-in opacity-0 scale-30 transition-all duration-800 flex flex-col lg:flex-row items-center justify-around p-8 gap-5">
         <Image
           src="/profile-picture.jpg"
           alt="April Duff profile picture"
@@ -59,7 +60,6 @@ const About = () => {
 
         <div className="slide-left max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto">
           <ul id="skills" className="flex flex-wrap justify-items-center items-center gap-2 md:gap-4 lg:gap-6 font-body">
-
             <li className="opacity-0 -translate-x-10 transition duration-700"><p>JavaScript</p></li>
             <li className="opacity-0 -translate-x-10 transition duration-700"><p>HTML</p></li>
             <li className="opacity-0 -translate-x-10 transition duration-700"><p>CSS</p></li>
@@ -79,7 +79,7 @@ const About = () => {
             <li className="opacity-0 -translate-x-10 transition duration-700"><p>Figma</p></li>
             <li className="opacity-0 -translate-x-10 transition duration-700"><p>Milanote</p></li>
             <li className="opacity-0 -translate-x-10 transition duration-700"><p>Notion</p></li>
-            <li className="opacity-0 -translate-x-10 transition duration-700"><p>Pen and Paper</p></li>
+            <li className="opacity-0 -translate-x-10 transition duration-700"><p>Pencil and Paper</p></li>
           </ul>
         </div>
       </div>

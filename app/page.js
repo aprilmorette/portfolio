@@ -36,7 +36,7 @@ export default function Home() {
             if (el.classList.contains("slide-left")) {
               const children = el.querySelectorAll("li");
               children.forEach((child, index) => {
-                child.style.transitionDelay = `${index * 150}ms`;
+                child.style.transitionDelay = `${index * 100}ms`;
                 child.classList.add("opacity-100", "translate-x-0");
                 child.classList.remove("opacity-0", "-translate-x-10");
               });
@@ -45,7 +45,7 @@ export default function Home() {
             // pop in animation
             if (el.classList.contains("pop-in")) {
               el.classList.add("opacity-100", "scale-100");
-              el.classList.remove("opacity-0", "scale-0");
+              el.classList.remove("opacity-0", "scale-30");
             }
 
             observer.unobserve(el);
