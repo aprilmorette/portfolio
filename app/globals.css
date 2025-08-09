@@ -67,7 +67,7 @@
 .vine path {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: draw 4s ease-out forwards;
+  animation: draw 2s ease-out forwards;
 }
 
 @keyframes draw {
@@ -84,11 +84,15 @@ body {
 
 h1,
 h2,
-h3,
-h4,
-h5 {
+h3
+{
   color: var(--color-primary);
   font-family: var(--font-heading);
+}
+
+h4, h5 {
+  color: var(--color-primary);
+  font-family: var(--font-body);
 }
 
 h2,
@@ -159,7 +163,6 @@ hr {
 
 #expensify-nav .link {
   font-family: var(--font-body);
-
   letter-spacing: 0.025em;
   font-size: var(--text-lg);
   font-weight: 500;

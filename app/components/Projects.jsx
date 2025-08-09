@@ -7,7 +7,7 @@ const Projects = () => {
       <h2 className="text-center mb-10">projects</h2>
 
       {/* expensify project */}
-      <div className="fade-in opacity-0 translate-y-15 transform-all duration-1000 pb-12 flex gap-4 lg:gap-6">
+      <div className="fade-in opacity-0 translate-y-15 transform-all duration-800 pb-12 flex gap-4 lg:gap-6">
         <div className="basis-1/3 flex flex-col justify-end mb-2">
           <div className="text-right">
             <h3>Expensify</h3>
@@ -57,7 +57,7 @@ const Projects = () => {
       </div>
 
       {/* portfolio project */}
-      <div className="fade-in opacity-0 translate-y-15 transform-all duration-1000 py-12 flex gap-4 lg:gap-6">
+      <div className="fade-in opacity-0 translate-y-15 transform-all duration-800 py-12 flex gap-4 lg:gap-6">
         <a className="basis-2/3" href="/Portfolio">
           <img
             className="card"

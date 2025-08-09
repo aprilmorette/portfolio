@@ -7,7 +7,7 @@ const Experience = () => {
 
       <div className="flex flex-col lg:flex-row justify-around gap-8">
         {/* OSU CEAT IT */}
-        <div className="card fade-in opacity-0 translate-y-15 transition-all duration-1000 flex flex-col items-center p-8 basis-1/2 gap-2">
+        <div className="card fade-in opacity-0 translate-y-15 transition-all duration-800 flex flex-col items-center p-8 basis-1/2 gap-2">
           <p className="font-bold text-center text-base md:text-lg">
             Student IT Technician ·{" "}
             <a
@@ -59,7 +59,7 @@ const Experience = () => {
         </div>
 
         {/* QuikTrip */}
-        <div className="card fade-in opacity-0 translate-y-15 transition-all duration-1000 flex flex-col items-center p-8 basis-1/2 gap-2">
+        <div className="card fade-in opacity-0 translate-y-15 transition-all duration-800 flex flex-col items-center p-8 basis-1/2 gap-2">
           <p className="font-bold text-center text-base md:text-lg">
             Store Clerk ·{" "}
             <a
