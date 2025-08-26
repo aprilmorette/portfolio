@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Sidebar from "../components/SideBar";
+import MobileMenu from "../components/MobileMenu";
 
 const sections = [
   { id: "overview", label: "overview" },
@@ -32,6 +33,12 @@ export default function Page() {
         <aside className="hidden lg:flex sticky top-0 h-screen w-14rem">
           <Sidebar id="expensify-nav" sections={sections} />
         </aside>
+        {/* mobile menu for smaller screens */}
+        <MobileMenu
+          id="expensify-mobile-menu"
+          showContent="true"
+          sections={sections}
+        />
 
         {/* main content */}
         <div className="flex flex-1 justify-center">

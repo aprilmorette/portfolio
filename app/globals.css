@@ -217,18 +217,36 @@ hr {
 }
 
 /*** mobile menu button ***/
-#mobile-menu-toggle span {
-  display: block;
-  background: var(--color-accent);
-  position: absolute;
-  height: 0.25em;
-  width: 1.9em;
-  border-radius: 10px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: 0.25s ease-in-out;
+.menu-button {
+  position: relative;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+#mobile-menu-toggle {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+#mobile-menu-toggle span {
+  cursor: pointer;
+  position: absolute;
+  margin: auto;
+  display: block;
+  background: var(--color-background);
+  height: 0.24em;
+  width: 1.9em;
+  opacity: 1;
+  transform: rotate(0deg);
+  border-radius: 10px;
+  transition: 0.35s ease-in-out;
+}
+
 /* hamburger to x transition */
 #mobile-menu-toggle span:nth-child(1) {
   top: 0.8em;
@@ -241,9 +259,9 @@ hr {
   top: 2em;
 }
 #mobile-menu-toggle.open span:nth-child(1) {
-  top: 0.8em;
+  top: 1.4em;
   width: 0%;
-  left: 50%;
+  margin: 0;
 }
 #mobile-menu-toggle.open span:nth-child(2) {
   transform: rotate(45deg);
@@ -252,13 +270,9 @@ hr {
   transform: rotate(-45deg);
 }
 #mobile-menu-toggle.open span:nth-child(4) {
-  top: 18px;
+  top: 1.4em;
   width: 0%;
-  left: 50%;
-}
-#mobile-menu-toggle.open:hover span:nth-child(2),
-#mobile-menu-toggle.open:hover span:nth-child(3) {
-  background: var(--color-background);
+  margin: 0;
 }
 
 /*** mobile menu nav links ***/

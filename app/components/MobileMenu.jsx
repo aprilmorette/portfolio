@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 
-const MobileMenu = ({ showContent }) => {
+const MobileMenu = ({ showContent, sections, id }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [ignoreScroll, setIgnoreScroll] = useState(false);
   const circleRef = useRef(null);
 
   // handles menu states
@@ -39,7 +41,6 @@ const MobileMenu = ({ showContent }) => {
 
     // how much the circle needs to scale to cover the entire screen
     const scale = radius / (elemW / 2) + 0.1;
-
     return { offsetX, offsetY, scale };
   };
 
@@ -63,63 +64,86 @@ const MobileMenu = ({ showContent }) => {
     elem.style.setProperty("--translate-y", `0px`);
     elem.style.setProperty("--scale", `1`);
     setIsMenuOpen(false);
+
+    setIgnoreScroll(true);
+    setIsVisible(false);
+    setTimeout(() => setIgnoreScroll(false), 2000);
   };
 
-  // close mobile menu when scrolling back up to Hero or resizing screen
   useEffect(() => {
-  const maybeClose = () => {
-    const isNowMedium = window.innerWidth >= 768;
+    // close mobile menu when scrolling back up to Hero or resizing screen
+    const maybeClose = () => {
+      const isNowMedium = window.innerWidth >= 768;
+      if ((!showContent || isNowMedium) && isMenuOpen) {
+        closeMenu();
+        setIsMenuOpen(false);
+      }
+    };
 
-    if ((!showContent || isNowMedium) && isMenuOpen) {
-      closeMenu();
-      setIsMenuOpen(false);
-    }
-  };
+    window.addEventListener("resize", maybeClose);
+    maybeClose(); // run immediately on load
 
-  window.addEventListener("resize", maybeClose);
-  maybeClose(); // run immediately on load
+    const handleScroll = () => {
+      if (ignoreScroll) return;
 
-  return () => window.removeEventListener("resize", maybeClose);
-}, [showContent, isMenuOpen]);
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY) {
+        // scrolling down → hide
+        setIsVisible(false);
+      } else {
+        // scrolling up → show
+        setIsVisible(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("resize", maybeClose);
+    window.addEventListener("scroll", handleScroll);
+
+    maybeClose();
+
+    return () => {
+      window.removeEventListener("resize", maybeClose);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [showContent, isMenuOpen, lastScrollY, ignoreScroll]);
 
   return (
     <>
       <div
-        className={`fixed top-0 left-0 w-full transition-all duration-700 md:hidden ${
-          showContent
+        id={id}
+        className={`fixed top-0 w-full transition-all duration-700 md:hidden bg-background ${
+          showContent && isVisible
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-6 pointer-events-none"
         }`}
       >
-        {/* background animation for mobile menu pop up */}
-        <div
-          ref={circleRef}
-          className="fixed top-0 right-0 bg-primary rounded-full z-40 transition-transform duration-600 ease-in-out origin-top-right m-4"
-          style={{
-            width: "50px",
-            height: "50px",
-            transform:
-              "translate(var(--translate-x), var(--translate-y)) scale(var(--scale))",
-            "--translate-x": "0px",
-            "--translate-y": "0px",
-            "--scale": "1",
-            "--offset-value": "0",
-          }}
-        />
-        <div className="flex flex-col justify-between p-4 z-50">
-          {/* top sticky header */}
-          <header className="flex justify-between h-[35px]" aria-label="header">
-            {/* logo */}
-            <a href="/" className="block">
-              <Image
-                src="/logo.svg"
-                alt="April Duff logo"
-                width={128}
-                height={56}
-                priority
-                className="w-20 cursor-pointer"
-              />
-            </a>
+        {/* top sticky header */}
+        <header className="flex justify-between items-center p-4 z-50" aria-label="header">
+          {/* logo */}
+          <a href="/" className="block">
+            <img
+              src="/logo.svg"
+              alt="April Duff logo"
+              width={128}
+              height={56}
+              className="w-20 cursor-pointer"
+            />
+          </a>
+          <div className="menu-button relative w-12 h-12">
+            {/* background animation for mobile menu pop up */}
+            <div
+              ref={circleRef}
+              className="bg-primary absolute inset-0 w-full h-full rounded-full z-50 transition-transform duration-600 ease-in-out origin-top-right"
+              style={{
+                transform:
+                  "translate(var(--translate-x), var(--translate-y)) scale(var(--scale))",
+                "--translate-x": "0px",
+                "--translate-y": "0px",
+                "--scale": "1",
+                "--offset-value": "0",
+              }}
+            />
 
             {/* menu toggle button for smaller screens */}
             <button
@@ -128,16 +152,16 @@ const MobileMenu = ({ showContent }) => {
               aria-label="Toggle Menu"
               className={`${
                 isMenuOpen ? "open" : ""
-              } leading-none relative w-[2.5em] z-60 rotate-0 transition duration-500 ease-in-out cursor-pointer`}
+              } flex flex-col justify-center items-center z-60 w-full h-full`}
             >
-              <span></span>
-              <span></span>
-              <span></span>
+              <span></span> 
+              <span></span> 
+              <span></span> 
               <span></span>
             </button>
-          </header>
+          </div>
 
-          {/* sidebar for smaller screens */}
+          {/* navigation menu for smaller screens */}
           <nav
             id="mobile-menu"
             className={`fixed h-screen inset-0 z-50 flex flex-col justify-center items-center gap-4 transition-opacity duration-300 ${
@@ -147,23 +171,21 @@ const MobileMenu = ({ showContent }) => {
             }`}
             aria-label="Mobile navigation"
           >
-            <a href="#about" onClick={closeMenu}>
-              about me
-            </a>
-            <a href="#experience" onClick={closeMenu}>
-              experience
-            </a>
-            <a href="#projects" onClick={closeMenu}>
-              projects
-            </a>
-            <a href="#contact" onClick={closeMenu}>
-              contact
-            </a>
+            {sections.map(({ id, label }) => (
+              <ul key={id}>
+                <a
+                  href={`#${id}`}
+                  onClick={closeMenu}
+                  className="link relative flex items-center text-xl gap-3 transition-colors duration-300"
+                >
+                  {label}
+                </a>
+              </ul>
+            ))}
           </nav>
-        </div>
+        </header>
       </div>
     </>
   );
 };
-
 export default MobileMenu;
