@@ -6,6 +6,60 @@ const Experience = () => {
       <h2 className="text-center mb-10">experience</h2>
 
       <div className="flex flex-col lg:flex-row justify-around gap-8">
+        {/* StreetCats */}
+        <div className="card fade-in opacity-0 translate-y-15 transition-all duration-800 flex flex-col items-center p-8 basis-1/2 gap-2">
+          <p className="font-bold text-center text-base md:text-lg">
+            Animal Care Volunteer ·{" "}
+            <a
+              href="https://www.streetcatstulsa.org/"
+              aria-label="StreetCats, Inc. Website"
+              className="inline-flex items-center"
+            >
+              StreetCats, Inc.
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-4 ml-1"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </a>
+          </p>
+          <p className="italic">AUGUST 2025 - PRESENT</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="size-8 sm:size-12 stroke-primary"
+          >
+            <circle cx="11" cy="4" r="2" />
+            <circle cx="18" cy="8" r="2" />
+            <circle cx="20" cy="16" r="2" />
+            <path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045q-.64-2.065-2.7-2.705A3.5 3.5 0 0 1 5.5 10Z" />
+          </svg>
+
+          <ul className="list-disc">
+            <li className="pb-2">
+              Provide a safe, sanitary environment for the cats by cleaning food
+              bowls, litter boxes, cages, and bedding.
+            </li>
+            <li className="pb-2">
+              Support animal well-being and adoption center presentation through
+              facility upkeep, including sweeping, mopping, and sanitizing play
+              areas.
+            </li>
+          </ul>
+        </div>
+
         {/* OSU CEAT IT */}
         <div className="card fade-in opacity-0 translate-y-15 transition-all duration-800 flex flex-col items-center p-8 basis-1/2 gap-2">
           <p className="font-bold text-center text-base md:text-lg">
@@ -49,11 +103,13 @@ const Experience = () => {
           </svg>
 
           <ul className="list-disc">
-            <li>
+            <li className="pb-2">
               Provisioned and deployed computer systems to OSU staff, faculty,
               and students.
             </li>
-            <li>Troubleshot and resolved software and hardware issues.</li>
+            <li className="pb-2">
+              Troubleshot and resolved software and hardware issues.
+            </li>
             <li>Developed and revised technical documentation.</li>
           </ul>
         </div>
@@ -101,7 +157,9 @@ const Experience = () => {
           </svg>
 
           <ul className="list-disc">
-            <li>Managed customer transactions and daily cash handling.</li>
+            <li className="pb-2">
+              Managed customer transactions and daily cash handling.
+            </li>
             <li>
               Maintained building cleanliness and upheld food safety standards.
             </li>
