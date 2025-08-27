@@ -8,7 +8,7 @@ const About = () => {
       <h2 className="text-center mb-5">about me</h2>
 
       {/* picture and bio */}
-      <div className="card pop-in opacity-0 scale-30 transition-all duration-1000 flex flex-col lg:flex-row items-center justify-around p-8 gap-5">
+      <div className="card pop-in opacity-0 scale-30 transition-all duration-1000 flex flex-col md:flex-row items-center justify-around p-8 gap-5">
         <Image
           src="/profile-picture.jpg"
           alt="April Duff profile picture"
