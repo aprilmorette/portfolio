@@ -23,7 +23,7 @@ export default function Page() {
       <div className="w-full flex flex-col justify-center items-center relative overflow-hidden px-6 py-6 gap-4">
         <h2 className="text-center">Expensify</h2>
         <video
-          className="w-full md:w-3/4 lg:w-2/3 h-auto rounded-lg shadow-sm m-8"
+          className="w-full md:w-3/4 lg:w-2/3 h-125 rounded-lg shadow-sm m-8"
           controls
         ></video>
       </div>
@@ -44,9 +44,9 @@ export default function Page() {
         <div className="flex flex-1 justify-center">
           <main className="max-w-6xl w-full px-5 self-center">
             <section id="overview">
-              <h3 className="py-10">Overview</h3>
+              <h3 className="pb-10 pt-2">Overview</h3>
 
-              <div className="flex flex-col gap-8 items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6">
                 <hgroup>
                   <h5>Description</h5>
                   <p>
@@ -66,6 +66,10 @@ export default function Page() {
                     base.
                   </p>
                 </hgroup>
+                <hgroup>
+                  <h5>Tools & Frameworks</h5>
+                  <p>Asana, Draw.io, JetBrains WebStorm</p>
+                </hgroup>
               </div>
               <hr></hr>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 text-center">
@@ -84,7 +88,7 @@ export default function Page() {
                       d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"
                     />
                   </svg>
-                  <h5 className="my-1 md:my-2">Problem</h5>
+                  <h5 className="my-1 md:my-2">PROBLEM</h5>
                   <p>
                     Students need a simple way to track expenses and visualize
                     spending patterns in order to practice financial literacy.
@@ -110,7 +114,7 @@ export default function Page() {
                       d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
                     />
                   </svg>
-                  <h5 className="my-1 md:my-2">Goal</h5>
+                  <h5 className="my-1 md:my-2">GOAL</h5>
                   <p>
                     Create an intuitive, secure, and efficient platform to help
                     users manage expenses while gaining hands‑on experience with
@@ -132,7 +136,7 @@ export default function Page() {
                       d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
                     />
                   </svg>
-                  <h5 className="my-1 md:my-2">Scope</h5>
+                  <h5 className="my-1 md:my-2">SCOPE</h5>
                   <p>3-month semester long project</p>
                 </div>
               </div>
@@ -142,61 +146,22 @@ export default function Page() {
             <section id="design-process" className="py-2">
               <h3>Design Process</h3>
               <div className="space-y-8 mt-6">
-                <figure>
-                  <img
-                    src="/scrum.png"
-                    alt="Scrum Process Flow Diagram"
-                    width={1650}
-                    height={311}
-                    className="w-full max-w-4xl mx-auto"
-                  />
-                  <figcaption className="text-center italic">
-                    Design Framework: Scrum Agile Methodology
-                  </figcaption>
-                </figure>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  {/* project management */}
-                  <div className="card p-5">
-                    <h5 className="text-lg font-medium mb-2">
-                      Project Management
-                    </h5>
-                    <ul className="list-disc list-inside text-gray-700 space-y-1">
-                      <li>Asana for backlog and timeline tracking</li>
-                    </ul>
-                  </div>
-
-                  {/* design Tools */}
-                  <div className="card p-5">
-                    <h5 className="text-lg font-medium mb-2">Design Tools</h5>
-                    <ul className="list-disc list-inside text-gray-700 space-y-1">
-                      <li>Draw.io for architecture and sequence diagrams</li>
-                    </ul>
-                  </div>
-
-                  {/* frontend */}
-                  <div className="card p-5">
-                    <h5 className="text-lg font-medium mb-2">Frontend</h5>
-                    <ul className="list-disc list-inside text-gray-700 space-y-1">
-                      <li>HTML, CSS, and vanilla JS in WebStorm</li>
-                      <li>Chart.js for interactive data visualizations</li>
-                      <li>Bootstrap for layout and UI components</li>
-                      <li>CSS Variables, Flexbox, and animations</li>
-                      <li>Dark mode and responsive design</li>
-                    </ul>
-                  </div>
-
-                  {/* backend */}
-                  <div className="card p-5">
-                    <h5 className="text-lg font-medium mb-2">Backend</h5>
-                    <ul className="list-disc list-inside text-gray-700 space-y-1">
-                      <li>Node.js with Express.js</li>
-                      <li>Passport.js with Google OAuth 2.0</li>
-                      <li>jsonwebtoken for secure APIs</li>
-                      <li>MySQL for persistent data</li>
-                      <li>cors and dotenv for middleware/security</li>
-                    </ul>
-                  </div>
+                <div className="flex flex-wrap gap-5 md:flex-nowrap ">
+                  <p className="md:basis-2/5">
+                    The <b>Scrum Agile Methodology</b> can adapt
+                    to the altering of requirements at any project stage.
+                    Projects concerning product development for a stakeholder
+                    is carried out best with this model because it
+                    adheres well to feedback and adjustments.
+                  </p>
+                  <figure className="md:basis-3/5">
+                    <img
+                      src="/scrum.png"
+                      alt="Scrum Process Flow Diagram"
+                      width={1650}
+                      height={311}
+                    />
+                  </figure>
                 </div>
               </div>
             </section>
@@ -210,7 +175,7 @@ export default function Page() {
                   <h5>Functional Requirements</h5>
                   <div className="mt-4 mx-4">
                     <p>The system shall...</p>
-                    <ul className="list-disc mx-5">
+                    <ul className="list-disc ms-5 pl-5 space-y-1">
                       <li>allow users to add and delete expenses.</li>
                       <li>
                         provide filtering capabilities for expense history by
@@ -232,7 +197,7 @@ export default function Page() {
                   <h5>Non-Functional Requirements</h5>
                   <div className="mt-4 mx-4">
                     <p>The system shall...</p>
-                    <ul className="list-disc mx-5">
+                    <ul className="list-disc ms-5 pl-5 space-y-1">
                       <li>
                         ensure high performance with fast page loading times
                         (less than 2 seconds).
@@ -557,7 +522,7 @@ export default function Page() {
                 </p>
 
                 <h5>Challenges</h5>
-                <ol className="list-decimal pl-5">
+                <ol className="list-decimal pl-5 space-y-4">
                   <li>
                     Implementing Google OAuth for user authentication was
                     complex due to the need to securely handle tokens.
@@ -565,7 +530,7 @@ export default function Page() {
                     passed to every API endpoint that modified data added
                     further complexity.
                     <p>Solution:</p>
-                    <ul className="list-[circle] pl-5">
+                    <ul className="list-[circle] ms-5 pl-5 space-y-1">
                       <li>
                         Used Passport.js to simplify the OAuth flow and manage
                         token generation securely.
@@ -587,7 +552,7 @@ export default function Page() {
                     pre-designed expenses page while avoiding conflicts in CSS,
                     such as overlapping styles or unexpected behavior caused by
                     shared class names.<p>Solution:</p>
-                    <ul className="list-[circle] ms-5">
+                    <ul className="list-[circle] ms-5 pl-5 space-y-1">
                       <li>
                         Used a CSS modular approach, encapsulating styles
                         specific to the login page by prefixing classes with a
@@ -611,7 +576,7 @@ export default function Page() {
                     issues such as charts overlapping other UI elements or
                     failing to refresh when new data was added.
                     <p>Solution:</p>
-                    <ul className="list-[circle] ms-5">
+                    <ul className="list-[circle] ms-5 pl-5 space-y-1">
                       <li>
                         Leveraged Chart.js for rendering charts due to its
                         flexibility and ease of use.
@@ -860,7 +825,6 @@ export default function Page() {
                 </p>
               </div>
             </section>
-            <hr></hr>
           </main>
         </div>
       </div>
