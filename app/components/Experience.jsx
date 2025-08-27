@@ -5,9 +5,9 @@ const Experience = () => {
     <section id="experience" className="px-4 pt-10 pb-15 max-w-6xl mx-auto">
       <h2 className="text-center mb-10">experience</h2>
 
-      <div className="flex flex-col lg:flex-row justify-around gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-around gap-8">
         {/* StreetCats */}
-        <div className="card fade-in opacity-0 translate-y-15 transition-all duration-800 flex flex-col items-center p-8 basis-1/2 gap-2">
+        <div className="card fade-in opacity-0 translate-y-15 transition duration-800 flex flex-col items-center p-8 w-full gap-2">
           <p className="font-bold text-center text-base md:text-lg">
             Animal Care Volunteer ·{" "}
             <a
@@ -61,7 +61,7 @@ const Experience = () => {
         </div>
 
         {/* OSU CEAT IT */}
-        <div className="card fade-in opacity-0 translate-y-15 transition-all duration-800 flex flex-col items-center p-8 basis-1/2 gap-2">
+        <div className="card fade-in opacity-0 translate-y-15 transition duration-800 flex flex-col items-center p-8 w-full gap-2">
           <p className="font-bold text-center text-base md:text-lg">
             Student IT Technician ·{" "}
             <a
@@ -115,55 +115,58 @@ const Experience = () => {
         </div>
 
         {/* QuikTrip */}
-        <div className="card fade-in opacity-0 translate-y-15 transition-all duration-800 flex flex-col items-center p-8 basis-1/2 gap-2">
-          <p className="font-bold text-center text-base md:text-lg">
-            Store Clerk ·{" "}
-            <a
-              href="https://www.quiktrip.com/"
-              aria-label="QuikTrip Website"
-              className="inline-flex items-center"
-            >
-              QuikTrip{" "}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-4 ml-1"
+        <div className="md:col-span-2 xl:col-span-1 flex justify-center">
+          <div className="card fade-in opacity-0 translate-y-15 transition duration-800 flex flex-col items-center p-8 w-full md:w-auto gap-2">
+            <p className="font-bold text-center text-base md:text-lg">
+              Part-Time Store Clerk ·{" "}
+              <a
+                href="https://www.quiktrip.com/"
+                aria-label="QuikTrip Website"
+                className="inline-flex items-center"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-                />
-              </svg>
-            </a>
-          </p>
-          <p className="italic">JUNE 2020 - AUGUST 2021</p>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="size-8 sm:size-12 stroke-primary"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
-            />
-          </svg>
+                QuikTrip{" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="size-4 ml-1"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                  />
+                </svg>
+              </a>
+            </p>
+            <p className="italic">JUNE 2020 - AUGUST 2021</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="size-8 sm:size-12 stroke-primary"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+              />
+            </svg>
 
-          <ul className="list-disc">
-            <li className="pb-2">
-              Managed customer transactions and daily cash handling.
-            </li>
-            <li>
-              Maintained building cleanliness and upheld food safety standards.
-            </li>
-          </ul>
+            <ul className="list-disc">
+              <li className="pb-2">
+                Managed customer transactions and daily cash handling.
+              </li>
+              <li>
+                Maintained building cleanliness and upheld food safety
+                standards.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
