@@ -113,7 +113,7 @@ const MobileMenu = ({ showContent, sections, id }) => {
     <>
       <div
         id={id}
-        className={`fixed top-0 w-full transition-all duration-700 lg:hidden bg-background ${
+        className={`fixed top-0 w-full transition-all duration-700 lg:hidden bg-background z-90 ${
           showContent && isVisible
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-6 pointer-events-none"
