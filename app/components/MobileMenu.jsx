@@ -53,6 +53,8 @@ const MobileMenu = ({ showContent, sections, id }) => {
     elem.style.setProperty("--translate-x", `${offsetX}px`);
     elem.style.setProperty("--translate-y", `-${offsetY}px`);
     elem.style.setProperty("--scale", scale);
+
+    setIgnoreScroll(true);
   };
 
   // close mobile menu and reset circle
@@ -65,16 +67,15 @@ const MobileMenu = ({ showContent, sections, id }) => {
     elem.style.setProperty("--scale", `1`);
     setIsMenuOpen(false);
 
-    setIgnoreScroll(true);
     setIsVisible(false);
     setTimeout(() => setIgnoreScroll(false), 2000);
   };
 
   useEffect(() => {
-    // close mobile menu when scrolling back up to Hero or resizing screen
+    // close mobile menu when scrolling back up to Hero or expanding screen greater than or equal to large viewport
     const maybeClose = () => {
-      const isNowMedium = window.innerWidth >= 768;
-      if ((!showContent || isNowMedium) && isMenuOpen) {
+      const isLarge = window.innerWidth >= 1024;
+      if ((!showContent || isLarge) && isMenuOpen) {
         closeMenu();
         setIsMenuOpen(false);
       }
@@ -112,7 +113,7 @@ const MobileMenu = ({ showContent, sections, id }) => {
     <>
       <div
         id={id}
-        className={`fixed top-0 w-full transition-all duration-700 md:hidden bg-background ${
+        className={`fixed top-0 w-full transition-all duration-700 lg:hidden bg-background ${
           showContent && isVisible
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-6 pointer-events-none"

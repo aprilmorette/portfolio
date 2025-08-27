@@ -20,7 +20,7 @@ export default function Page() {
   return (
     <div id="project">
       {/* landing section */}
-      <div className="w-full flex flex-col justify-center items-center relative overflow-hidden px-6 py-6 gap-4">
+      <div className="bg-green-100 w-full flex flex-col justify-center items-center relative overflow-hidden px-6 py-6 gap-4">
         <h2 className="text-center">Expensify</h2>
         <video
           className="w-full md:w-3/4 lg:w-2/3 h-125 rounded-lg shadow-sm m-8"
@@ -46,20 +46,18 @@ export default function Page() {
             <section id="overview">
               <h3 className="pb-10 pt-2">Overview</h3>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6">
+              <div className="card p-4 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6">
                 <hgroup>
                   <h5>Description</h5>
-                  <p>
+                  <p className="mt-2">
                     A web‑based application for tracking and analyzing expenses
-                    with Google Identity Service API for secure authentication.
-                    Core features include creating and deleting expenses,
-                    displaying graphical insights, filtering expense history,
-                    and customizing user settings.
+                    with Google Identity Service API for secure authentication. Core features include <b>creating and deleting expenses</b>, <b>displaying graphical insights</b>, <b>filtering expense history</b>,
+                    and <b>customizing user settings</b>.
                   </p>
                 </hgroup>
                 <hgroup>
                   <h5>Context</h5>
-                  <p>
+                  <p className="mt-2">
                     Developed as part of a Software Engineering class at
                     Oklahoma State University. The professor acted as the
                     stakeholder, and the student body represented the client
@@ -68,7 +66,7 @@ export default function Page() {
                 </hgroup>
                 <hgroup>
                   <h5>Tools & Frameworks</h5>
-                  <p>Asana, Draw.io, JetBrains WebStorm</p>
+                  <p className="mt-2">Asana, Draw.io, JetBrains WebStorm</p>
                 </hgroup>
               </div>
               <hr></hr>
@@ -211,6 +209,7 @@ export default function Page() {
                   </div>
                 </div>
               </div>
+
               {/* stakeholder analysis section */}
               <div className="my-10">
                 <div className="card w-full">
@@ -398,6 +397,7 @@ export default function Page() {
                   </div>
                 </div>
               </div>
+
               {/* use cases section */}
               <div className="my-10 card p-4">
                 <h5>Use Cases</h5>
