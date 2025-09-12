@@ -14,6 +14,8 @@ const Experience = () => {
               href="https://www.streetcatstulsa.org/"
               aria-label="StreetCats, Inc. Website"
               className="inline-flex items-center"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               StreetCats, Inc.
               <svg
@@ -68,6 +70,8 @@ const Experience = () => {
               href="https://ceat.okstate.edu/itservices/"
               aria-label="OSU CEAT IT Website"
               className="inline-flex items-center"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               OSU CEAT IT
               <svg
@@ -123,6 +127,8 @@ const Experience = () => {
                 href="https://www.quiktrip.com/"
                 aria-label="QuikTrip Website"
                 className="inline-flex items-center"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 QuikTrip{" "}
                 <svg
