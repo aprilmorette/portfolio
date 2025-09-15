@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../components/SideBar";
 import MobileMenu from "../components/MobileMenu";
 
@@ -16,11 +16,26 @@ const sections = [
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("individual-users");
+  const [showContent, setshowContent] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const heroHeight = window.innerHeight;
+      setshowContent(scrollPosition > heroHeight - 200);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div id="project">
       {/* landing section */}
-      <div className="bg-green-100 w-full flex flex-col justify-center items-center relative overflow-hidden px-6 py-6 gap-4">
+      <div className="min-h-screen w-full flex flex-col justify-center items-center relative overflow-hidden px-6 py-6 gap-4">
         <h2 className="text-center">Expensify</h2>
         <video
           className="w-full md:w-3/4 lg:w-2/3 h-125 rounded-lg shadow-sm m-8"
@@ -28,31 +43,42 @@ export default function Page() {
         ></video>
       </div>
 
-      <div className="flex">
+      <div
+        className={`flex flex-col lg:flex-row transition-all duration-1000 ${
+          showContent
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-5 pointer-events-none"
+        }`}
+      >
         {/* sidebar for large screens */}
         <aside className="hidden lg:flex sticky top-0 h-screen w-14rem">
           <Sidebar id="expensify-nav" sections={sections} />
         </aside>
+
         {/* mobile menu for smaller screens */}
         <MobileMenu
           id="expensify-mobile-menu"
-          showContent="true"
+          showContent={showContent}
           sections={sections}
         />
 
         {/* main content */}
         <div className="flex flex-1 justify-center">
-          <main className="max-w-6xl w-full px-5 self-center">
-            <section id="overview">
-              <h3 className="pb-10 pt-2">Overview</h3>
+          <main className="max-w-5xl w-full px-5 self-center">
+            <section id="overview" className="pt-5">
+              <h3 className="mb-15">Overview</h3>
 
-              <div className="card p-4 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6">
+              <div className="pb-10">
+                <div className="card p-5 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6">
                 <hgroup>
                   <h5>Description</h5>
                   <p className="mt-2">
                     A web‑based application for tracking and analyzing expenses
-                    with Google Identity Service API for secure authentication. Core features include <b>creating and deleting expenses</b>, <b>displaying graphical insights</b>, <b>filtering expense history</b>,
-                    and <b>customizing user settings</b>.
+                    with Google Identity Service API for secure authentication.
+                    Core features include <b>creating and deleting expenses</b>,{" "}
+                    <b>displaying graphical insights</b>,{" "}
+                    <b>filtering expense history</b>, and{" "}
+                    <b>customizing user settings</b>.
                   </p>
                 </hgroup>
                 <hgroup>
@@ -68,9 +94,12 @@ export default function Page() {
                   <h5>Tools & Frameworks</h5>
                   <p className="mt-2">Asana, Draw.io, JetBrains WebStorm</p>
                 </hgroup>
+                </div>
               </div>
+
               <hr></hr>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 text-center">
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 text-center md:py-10">
                 <div className="flex flex-col items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -138,19 +167,20 @@ export default function Page() {
                   <p>3-month semester long project</p>
                 </div>
               </div>
-              <hr></hr>
-            </section>
 
-            <section id="design-process" className="py-2">
-              <h3>Design Process</h3>
-              <div className="space-y-8 mt-6">
+            </section>
+            <hr></hr>
+
+            <section id="design-process" className="py-5">
+              <h3 className="mb-15">Design Process</h3>
+              <div className="space-y-8">
                 <div className="flex flex-wrap gap-5 md:flex-nowrap ">
                   <p className="md:basis-2/5">
-                    The <b>Scrum Agile Methodology</b> can adapt
-                    to the altering of requirements at any project stage.
-                    Projects concerning product development for a stakeholder
-                    is carried out best with this model because it
-                    adheres well to feedback and adjustments.
+                    The <b>Scrum Agile Methodology</b> can adapt to the altering
+                    of requirements at any project stage. Projects concerning
+                    product development for a stakeholder is carried out best
+                    with this model because it adheres well to feedback and
+                    adjustments.
                   </p>
                   <figure className="md:basis-3/5">
                     <img
@@ -165,11 +195,11 @@ export default function Page() {
             </section>
             <hr></hr>
 
-            <section id="requirements" className="py-2">
-              <h3>Requirements</h3>
+            <section id="requirements" className="py-5">
+              <h3 className="mb-15">Requirements</h3>
               {/* requirements section */}
-              <div className="flex flex-wrap md:flex-nowrap gap-5 my-10">
-                <div className="card p-4 md:basis-3/5">
+              <div className="flex flex-wrap md:flex-nowrap gap-10 mb-10 mt-15">
+                <div className="card p-5 md:basis-3/5">
                   <h5>Functional Requirements</h5>
                   <div className="mt-4 mx-4">
                     <p>The system shall...</p>
@@ -191,7 +221,7 @@ export default function Page() {
                     </ul>
                   </div>
                 </div>
-                <div className="card p-4 md:basis-2/5">
+                <div className="card p-5 md:basis-2/5">
                   <h5>Non-Functional Requirements</h5>
                   <div className="mt-4 mx-4">
                     <p>The system shall...</p>
@@ -213,7 +243,7 @@ export default function Page() {
               {/* stakeholder analysis section */}
               <div className="my-10">
                 <div className="card w-full">
-                  <h5 className="px-4 pt-4">Stakeholder Analysis</h5>
+                  <h5 className="px-5 pt-5">Stakeholder Analysis</h5>
                   {/* stakeholder tabs */}
                   <ul className="flex flex-wrap text-center border-b border-accent mt-4">
                     <li className="me-1">
@@ -399,7 +429,7 @@ export default function Page() {
               </div>
 
               {/* use cases section */}
-              <div className="my-10 card p-4">
+              <div className="mt-10 card p-5">
                 <h5>Use Cases</h5>
                 <div className="m-4">
                   <p className="underline">Sign Up and Add/Delete Expense</p>
@@ -462,9 +492,9 @@ export default function Page() {
             </section>
             <hr></hr>
 
-            <section id="system-design" className="py-2">
-              <h3>System Design</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-10">
+            <section id="system-design" className="py-5">
+              <h3 className="mb-15">System Design</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-15">
                 <div>
                   <h5>Architecture</h5>
                   <img
@@ -509,9 +539,9 @@ export default function Page() {
             </section>
             <hr></hr>
 
-            <section id="implementation" className="py-2">
-              <h3>Implementation</h3>
-              <div className="my-10">
+            <section id="implementation" className="py-5">
+              <h3 className="mb-15">Implementation</h3>
+              <div className="my-15">
                 <h5>Code Structure</h5>
                 <p>
                   The code for Expensify is organized into several distinct
@@ -599,16 +629,16 @@ export default function Page() {
             </section>
             <hr></hr>
 
-            <section id="testing" className="py-2">
-              <h3>Testing</h3>
+            <section id="testing" className="py-5">
+              <h3 className="mb-15">Testing</h3>
               <div className="my-10">
                 <h5></h5>
               </div>
             </section>
             <hr></hr>
 
-            <section id="future-work" className="py-2">
-              <h3>Future Work</h3>
+            <section id="future-work" className="py-5">
+              <h3 className="mb-15">Future Work</h3>
               <div className="my-10">
                 <h5>Future Enhancements</h5>
                 <ul className="list-disc">
@@ -678,8 +708,8 @@ export default function Page() {
             </section>
             <hr></hr>
 
-            <section id="timeline" className="py-2">
-              <h3>Timeline</h3>
+            <section id="timeline" className="py-5">
+              <h3 className="mb-15">Timeline</h3>
               <div className="my-10">
                 <ul className="relative border-l-2 border-accent">
                   {/* Sprint One */}
@@ -738,8 +768,8 @@ export default function Page() {
             </section>
             <hr></hr>
 
-            <section id="conclusion" className="py-2">
-              <h3>Conclusion</h3>
+            <section id="conclusion" className="py-5">
+              <h3 className="mb-15">Conclusion</h3>
               <div className="my-10">
                 <p>
                   The Expensify project successfully achieved its primary goal
