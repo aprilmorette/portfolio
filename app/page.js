@@ -68,8 +68,9 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <main
-        className={`flex transition-all duration-1000 ${
+      <section
+        id="main-content"
+        className={`flex flex-col transition-all duration-1000 ${
           showContent
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-5 pointer-events-none"
@@ -159,25 +160,25 @@ export default function Home() {
           />
         </div>
 
-        {/* Site content */}
-        <section id="main-content" className="w-full">
+        <MobileMenu
+          id="home-mobile-menu"
+          sections={[
+            { id: "about", label: "about me" },
+            { id: "experience", label: "experience" },
+            { id: "projects", label: "projects" },
+            { id: "contact", label: "contact" },
+          ]}
+          showContent={showContent}
+        />
+
+        {/* site content */}
+        <main className="w-full">
           <About />
           <Experience />
           <Projects />
           <Contact />
-        </section>
-      </main>
-
-      <MobileMenu
-        id="home-mobile-menu"
-        sections={[
-          { id: "about", label: "about me" },
-          { id: "experience", label: "experience" },
-          { id: "projects", label: "projects" },
-          { id: "contact", label: "contact" },
-        ]}
-        showContent={showContent}
-      />
+        </main>
+      </section>
     </>
   );
 }
