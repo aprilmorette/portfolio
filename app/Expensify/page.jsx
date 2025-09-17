@@ -70,30 +70,31 @@ export default function Page() {
 
               <div className="pb-10">
                 <div className="card p-5 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6">
-                <hgroup>
-                  <h5>Description</h5>
-                  <p className="mt-2">
-                    A web‑based application for tracking and analyzing expenses
-                    with Google Identity Service API for secure authentication.
-                    Core features include <b>creating and deleting expenses</b>,{" "}
-                    <b>displaying graphical insights</b>,{" "}
-                    <b>filtering expense history</b>, and{" "}
-                    <b>customizing user settings</b>.
-                  </p>
-                </hgroup>
-                <hgroup>
-                  <h5>Context</h5>
-                  <p className="mt-2">
-                    Developed as part of a Software Engineering class at
-                    Oklahoma State University. The professor acted as the
-                    stakeholder, and the student body represented the client
-                    base.
-                  </p>
-                </hgroup>
-                <hgroup>
-                  <h5>Tools & Frameworks</h5>
-                  <p className="mt-2">Asana, Draw.io, JetBrains WebStorm</p>
-                </hgroup>
+                  <hgroup>
+                    <h5>Description</h5>
+                    <p className="mt-2">
+                      A web‑based application for tracking and analyzing
+                      expenses with Google Identity Service API for secure
+                      authentication. Core features include{" "}
+                      <b>creating and deleting expenses</b>,{" "}
+                      <b>displaying graphical insights</b>,{" "}
+                      <b>filtering expense history</b>, and{" "}
+                      <b>customizing user settings</b>.
+                    </p>
+                  </hgroup>
+                  <hgroup>
+                    <h5>Context</h5>
+                    <p className="mt-2">
+                      Developed as part of a Software Engineering class at
+                      Oklahoma State University. The professor acted as the
+                      stakeholder, and the student body represented the client
+                      base.
+                    </p>
+                  </hgroup>
+                  <hgroup>
+                    <h5>Tools & Frameworks</h5>
+                    <p className="mt-2">Asana, Draw.io, JetBrains WebStorm</p>
+                  </hgroup>
                 </div>
               </div>
 
@@ -167,7 +168,6 @@ export default function Page() {
                   <p>3-month semester long project</p>
                 </div>
               </div>
-
             </section>
             <hr></hr>
 
@@ -202,8 +202,8 @@ export default function Page() {
                 <div className="card p-5 md:basis-3/5">
                   <h5>Functional Requirements</h5>
                   <div className="mt-4 mx-4">
-                    <p>The system shall...</p>
-                    <ul className="list-disc ms-5 pl-5 space-y-1">
+                    <p className="pb-2">The system shall...</p>
+                    <ul className="list-disc ms-5 pl-5 space-y-5">
                       <li>allow users to add and delete expenses.</li>
                       <li>
                         provide filtering capabilities for expense history by
@@ -224,8 +224,8 @@ export default function Page() {
                 <div className="card p-5 md:basis-2/5">
                   <h5>Non-Functional Requirements</h5>
                   <div className="mt-4 mx-4">
-                    <p>The system shall...</p>
-                    <ul className="list-disc ms-5 pl-5 space-y-1">
+                    <p className="pb-2">The system shall...</p>
+                    <ul className="list-disc ms-5 pl-5 space-y-5">
                       <li>
                         ensure high performance with fast page loading times
                         (less than 2 seconds).
@@ -541,90 +541,104 @@ export default function Page() {
 
             <section id="implementation" className="py-5">
               <h3 className="mb-15">Implementation</h3>
-              <div className="my-15">
-                <h5>Code Structure</h5>
-                <p>
-                  The code for Expensify is organized into several distinct
-                  modules, each with a specific responsibility. This modular
-                  architecture ensures a clear separation between the frontend,
-                  backend, and database layers, making the application easy to
-                  develop, test, and maintain.
-                </p>
 
-                <h5>Challenges</h5>
-                <ol className="list-decimal pl-5 space-y-4">
-                  <li>
-                    Implementing Google OAuth for user authentication was
-                    complex due to the need to securely handle tokens.
-                    Additionally, ensuring that the token was consistently
-                    passed to every API endpoint that modified data added
-                    further complexity.
-                    <p>Solution:</p>
-                    <ul className="list-[circle] ms-5 pl-5 space-y-1">
-                      <li>
-                        Used Passport.js to simplify the OAuth flow and manage
-                        token generation securely.
-                      </li>
-                      <li>
-                        Implemented a middleware to automatically attach and
-                        validate tokens for all relevant API calls, reducing the
-                        risk of missing tokens in requests.
-                      </li>
-                      <li>
-                        Adopted JWT (JSON Web Tokens) for session management,
-                        ensuring secure token exchange between the client and
-                        server.
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    The login page needed to be styled consistently with the
-                    pre-designed expenses page while avoiding conflicts in CSS,
-                    such as overlapping styles or unexpected behavior caused by
-                    shared class names.<p>Solution:</p>
-                    <ul className="list-[circle] ms-5 pl-5 space-y-1">
-                      <li>
-                        Used a CSS modular approach, encapsulating styles
-                        specific to the login page by prefixing classes with a
-                        unique identifier (e.g., .login-page).
-                      </li>
-                      <li>
-                        Refactored the CSS for the expenses page to ensure
-                        reusable, component-based styling, reducing the
-                        likelihood of conflicts.
-                      </li>
-                      <li>
-                        Conducted thorough testing across multiple screen sizes
-                        and browsers to identify and resolve visual
-                        inconsistencies.
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    Ensuring that charts were well-aligned and displayed correct
-                    data dynamically was difficult. Initial attempts led to
-                    issues such as charts overlapping other UI elements or
-                    failing to refresh when new data was added.
-                    <p>Solution:</p>
-                    <ul className="list-[circle] ms-5 pl-5 space-y-1">
-                      <li>
-                        Leveraged Chart.js for rendering charts due to its
-                        flexibility and ease of use.
-                      </li>
-                      <li>
-                        Implemented responsive layouts using Flexbox and CSS
-                        Grid, ensuring charts remained aligned across various
-                        devices.
-                      </li>
-                      <li>
-                        Added logic to refresh chart data dynamically whenever
-                        the user added, edited, or deleted an expense. This was
-                        achieved by triggering an event listener tied to the
-                        chart’s redraw functionality.
-                      </li>
-                    </ul>
-                  </li>
-                </ol>
+              <h5>Code Structure</h5>
+              <p>
+                The code for Expensify is organized into several distinct
+                modules, each with a specific responsibility. This modular
+                architecture ensures a clear separation between the frontend,
+                backend, and database layers, making the application easy to
+                develop, test, and maintain.
+              </p>
+
+              <h5 className="my-5">Challenges</h5>
+              <div className="space-y-5">
+                {/* challenge one */}
+                <div className="card p-5">
+                  <p className="whitespace-pre-line">
+                    <b>
+                      Implementing Google OAuth for user authentication was
+                      complex due to the need to securely handle tokens.
+                      Additionally, ensuring that the token was consistently
+                      passed to every API endpoint that modified data added
+                      further complexity.
+                    </b>
+                    {"\n\n"}Solution:
+                  </p>
+                  <ul className="list-[circle] ms-5 pl-5 space-y-1">
+                    <li>
+                      Used Passport.js to simplify the OAuth flow and manage
+                      token generation securely.
+                    </li>
+                    <li>
+                      Implemented a middleware to automatically attach and
+                      validate tokens for all relevant API calls, reducing the
+                      risk of missing tokens in requests.
+                    </li>
+                    <li>
+                      Adopted JWT (JSON Web Tokens) for session management,
+                      ensuring secure token exchange between the client and
+                      server.
+                    </li>
+                  </ul>
+                </div>
+                {/* challenge two */}
+                <div className="card p-5">
+                  <p className="whitespace-pre-line">
+                    <b>
+                      The login page needed to be styled consistently with the
+                      pre-designed expenses page while avoiding conflicts in
+                      CSS, such as overlapping styles or unexpected behavior
+                      caused by shared class names.
+                    </b>
+                    {"\n\n"}Solution:
+                  </p>
+                  <ul className="list-[circle] ms-5 pl-5 space-y-1">
+                    <li>
+                      Used a CSS modular approach, encapsulating styles specific
+                      to the login page by prefixing classes with a unique
+                      identifier (e.g., .login-page).
+                    </li>
+                    <li>
+                      Refactored the CSS for the expenses page to ensure
+                      reusable, component-based styling, reducing the likelihood
+                      of conflicts.
+                    </li>
+                    <li>
+                      Conducted thorough testing across multiple screen sizes
+                      and browsers to identify and resolve visual
+                      inconsistencies.
+                    </li>
+                  </ul>
+                </div>
+                {/* challenge three             */}
+                <div className="card p-5">
+                  <p className="whitespace-pre-line">
+                    <b>
+                      Ensuring that charts were well-aligned and displayed
+                      correct data dynamically was difficult. Initial attempts
+                      led to issues such as charts overlapping other UI elements
+                      or failing to refresh when new data was added.
+                    </b>
+                    {"\n\n"}Solution:
+                  </p>
+                  <ul className="list-[circle] ms-5 pl-5 space-y-1">
+                    <li>
+                      Leveraged Chart.js for rendering charts due to its
+                      flexibility and ease of use.
+                    </li>
+                    <li>
+                      Implemented responsive layouts using Flexbox and CSS Grid,
+                      ensuring charts remained aligned across various devices.
+                    </li>
+                    <li>
+                      Added logic to refresh chart data dynamically whenever the
+                      user added, edited, or deleted an expense. This was
+                      achieved by triggering an event listener tied to the
+                      chart’s redraw functionality.
+                    </li>
+                  </ul>
+                </div>
               </div>
             </section>
             <hr></hr>
@@ -639,71 +653,81 @@ export default function Page() {
 
             <section id="future-work" className="py-5">
               <h3 className="mb-15">Future Work</h3>
-              <div className="my-10">
-                <h5>Future Enhancements</h5>
-                <ul className="list-disc">
-                  <li>
-                    Expanded Authentication: Support login and authentication
-                    with additional accounts, such as Apple ID or social media
-                    platforms, beyond just Google accounts.
-                  </li>
-                  <li>
-                    Profile Customization: Introduce options for profile
-                    customization to enhance personalization and user
-                    engagement.
-                  </li>
-                  <li>
-                    Custom Categories: Enable users to create custom expense
-                    categories tailored to their individual needs.
-                  </li>
-                  <li>
-                    Expense Editing: Allow users to edit existing expenses for
-                    better accuracy and control over their financial history.
-                  </li>
-                  <li>
-                    Sorting Options: Allow users to sort expense history
-                    chronologically or alphabetically for improved organization.
-                  </li>
-                  <li>
-                    Precise Filtering: Add more timeframe options for filtering
-                    expenses, providing greater flexibility in analyzing expense
-                    history.
-                  </li>
-                </ul>
 
-                <h5>Known Issues and Maintenance Plan</h5>
-                <p>
-                  Input Validation: Expense amount field allows any characters
-                  to be submitted.
-                </p>
-                <ul className="list-disc">
-                  <li>
-                    Maintenance: Limit input to only numbers and a single
-                    decimal if needed.
-                  </li>
-                </ul>
-                <p>
-                  Graphical Insights: If a graph is visible, it will not
-                  automatically refresh when an expense is added or deleted. The
-                  button to toggle the graph must be clicked twice (hide/appear)
-                  to correctly reflect the expense history changes.
-                </p>
-                <ul className="list-disc">
-                  <li>
-                    Maintenance: Update graphs when either the Add or Delete
-                    button has been triggered.
-                  </li>
-                </ul>
-                <p>
-                  Total Amount: Total expense amount remains the same regardless
-                  of filtering.
-                </p>
-                <ul className="list-disc">
-                  <li>
-                    Maintenance: Update total amount when filters are applied or
-                    reset.
-                  </li>
-                </ul>
+              <div className="my-10 space-y-15">
+                <div className="card p-5">
+                  <h5 className="pb-5">Potential Enhancements</h5>
+                  <ul className="list-disc ms-5 pl-5 space-y-5">
+                    <li>
+                      <b>Expanded Authentication</b>: Support login and
+                      authentication with additional accounts, such as Apple ID
+                      or social media platforms, beyond just Google accounts.
+                    </li>
+                    <li>
+                      <b>Profile Customization</b>: Introduce options for
+                      profile customization to enhance personalization and user
+                      engagement.
+                    </li>
+                    <li>
+                      <b>Custom Categories</b>: Enable users to create custom
+                      expense categories tailored to their individual needs.
+                    </li>
+                    <li>
+                      <b>Expense Editing</b>: Allow users to edit existing
+                      expenses for better accuracy and control over their
+                      financial history.
+                    </li>
+                    <li>
+                      <b>Sorting Options</b>: Allow users to sort expense
+                      history chronologically or alphabetically for improved
+                      organization.
+                    </li>
+                    <li>
+                      <b>Precise Filtering</b>: Add more timeframe options for
+                      filtering expenses, providing greater flexibility in
+                      analyzing expense history.
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="card p-5">
+                  <h5 className="pb-5">Known Issues and Maintenance Plan</h5>
+                  <ul className="list-disc ms-5 pl-5 space-y-5">
+                    <div className="space-y-2">
+                      <li>
+                        <b>Input Validation</b>: Expense amount field allows any
+                        characters to be submitted.
+                      </li>
+                      <li className="list-[circle] ms-5">
+                        <b><i>Maintenance</i></b> : Limit input to only numbers and a
+                        single decimal if needed.
+                      </li>
+                    </div>
+                    <div className="space-y-2">
+                      <li>
+                        <b>Graphical Insights</b>: If a graph is visible, it
+                        will not automatically refresh when an expense is added
+                        or deleted. The button to toggle the graph must be
+                        clicked twice (hide/appear) to correctly reflect the
+                        expense history changes.
+                      </li>
+                      <li className="list-[circle] ms-5">
+                        <b><i>Maintenance</i></b> : Update graphs when either the Add or
+                        Delete button has been triggered.
+                      </li>
+                    </div>
+                    <div className="space-y-2">
+                      <li>
+                        <b>Total Amount</b>: Total expense amount remains the
+                        same regardless of filtering.
+                      </li>
+                      <li className="list-[circle] ms-5">
+                        <b><i>Maintenance</i></b>: Update total amount when filters are
+                        applied or reset.
+                      </li>
+                    </div>
+                  </ul>
+                </div>
               </div>
             </section>
             <hr></hr>
@@ -770,89 +794,102 @@ export default function Page() {
 
             <section id="conclusion" className="py-5">
               <h3 className="mb-15">Conclusion</h3>
-              <div className="my-10">
-                <p>
-                  The Expensify project successfully achieved its primary goal
-                  of creating an intuitive, secure, and efficient platform for
-                  users to manage their expenses. The application provides
-                  essential functionalities, including expense tracking,
-                  filtering, and graphical insights, while maintaining a
-                  user-friendly interface and robust performance.
-                </p>
-                <h5>Overall Success</h5>
-                <ul className="list-disc">
-                  <li>
-                    Core Objectives Met: All functional and non-functional
-                    requirements, such as user authentication, data
-                    visualization, and responsiveness, were implemented and
-                    thoroughly tested.
-                  </li>
-                  <li>
-                    User-Friendly Design: The application's intuitive interface
-                    ensures seamless navigation and usability, minimizing the
-                    need for additional user training or guides.
-                  </li>
-                  <li>
-                    Technical Robustness: The project employed secure
-                    authentication, modular code architecture, and efficient
-                    database design, resulting in a scalable and maintainable
-                    system.
-                  </li>
-                </ul>
-                <h5>Key Lessons Learned</h5>
-                <ul className="list-disc">
-                  <li>
-                    Effective Collaboration: Breaking the project into sprints
-                    and aligning deliverables with timelines ensured efficient
-                    teamwork and timely completion of tasks.
-                  </li>
-                  <li>
-                    Importance of Modularity: Designing modular code simplified
-                    debugging, testing, and the integration of new features.
-                  </li>
-                  <li>
-                    Dynamic Problem-Solving: Addressing challenges, such as
-                    integrating Google OAuth and aligning chart rendering with
-                    real-time data, underscored the importance of adaptive
-                    solutions and iterative improvements.
-                  </li>
-                  <li>
-                    User-Centric Development: Continuous feedback and iterative
-                    testing played a pivotal role in refining the application’s
-                    interface and functionality to meet user needs effectively.
-                  </li>
-                </ul>
-                <h5>Meeting Initial Objectives</h5>
-                <ul className="list-disc">
-                  <li>
-                    Expense Management: The system allows users to add, edit,
-                    delete, and view expenses effortlessly.
-                  </li>
-                  <li>
-                    Data Visualization: The inclusion of bar, pie, and line
-                    charts offers users meaningful insights into their spending
-                    patterns.
-                  </li>
-                  <li>
-                    Security: Google OAuth and robust token handling mechanisms
-                    ensure user data is securely managed.
-                  </li>
-                  <li>
-                    Performance: The application demonstrates high reliability
-                    and efficiency, with fast load times and responsive
-                    operations.
-                  </li>
-                </ul>
-                <h5>Final Remarks</h5>
-                <p>
-                  The Expensify project not only fulfills its initial objectives
-                  but also lays a solid foundation for future enhancements, such
-                  as custom categories, advanced filters, and expanded
-                  authentication options. The project exemplifies a successful
-                  application of agile development principles and highlights the
-                  value of user-centric design in delivering a high-quality
-                  product.
-                </p>
+              <div className="my-10 space-y-15">
+                <div className="card p-5">
+                  <h5 className="pb-5">Overall Success</h5>
+                  <ul className="list-disc ms-5 pl-5 space-y-5">
+                    <li>
+                      <b>Core Objectives Met</b>: All functional and
+                      non-functional requirements, such as user authentication,
+                      data visualization, and responsiveness, were implemented
+                      and thoroughly tested.
+                    </li>
+                    <li>
+                      <b>User-Friendly Design</b>: The application's intuitive
+                      interface ensures seamless navigation and usability,
+                      minimizing the need for additional user training or
+                      guides.
+                    </li>
+                    <li>
+                      <b>Technical Robustness</b>: The project employed secure
+                      authentication, modular code architecture, and efficient
+                      database design, resulting in a scalable and maintainable
+                      system.
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="card p-5">
+                  <h5 className="pb-5">Key Lessons Learned</h5>
+                  <ul className="list-disc ms-5 pl-5 space-y-5">
+                    <li>
+                      <b>Effective Collaboration</b>: Breaking the project into sprints
+                      and aligning deliverables with timelines ensured efficient
+                      teamwork and timely completion of tasks.
+                    </li>
+                    <li>
+                      <b>Importance of Modularity</b>: Designing modular code
+                      simplified debugging, testing, and the integration of new
+                      features.
+                    </li>
+                    <li>
+                      <b>Dynamic Problem-Solving</b>: Addressing challenges, such as
+                      integrating Google OAuth and aligning chart rendering with
+                      real-time data, underscored the importance of adaptive
+                      solutions and iterative improvements.
+                    </li>
+                    <li>
+                      <b>User-Centric Development</b>: Continuous feedback and
+                      iterative testing played a pivotal role in refining the
+                      application’s interface and functionality to meet user
+                      needs effectively.
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="card p-5">
+                  <h5 className="pb-5">Meeting Initial Objectives</h5>
+                  <ul className="list-disc ms-5 pl-5 space-y-5">
+                    <li>
+                      <b>Expense Management</b>: The system allows users to add, edit,
+                      delete, and view expenses effortlessly.
+                    </li>
+                    <li>
+                      <b>Data Visualization</b>: The inclusion of bar, pie, and line
+                      charts offers users meaningful insights into their
+                      spending patterns.
+                    </li>
+                    <li>
+                      <b>Security</b>: Google OAuth and robust token handling
+                      mechanisms ensure user data is securely managed.
+                    </li>
+                    <li>
+                      <b>Performance</b>: The application demonstrates high reliability
+                      and efficiency, with fast load times and responsive
+                      operations.
+                    </li>
+                  </ul>
+                </div>
+
+                <hr></hr>
+                <div className="text-center">
+                  <h5>Final Remarks</h5>
+                  <p>
+                    The Expensify project successfully achieved its primary goal
+                    of creating an intuitive, secure, and efficient platform for
+                    users to manage their expenses. The application provides
+                    essential functionalities, including expense tracking,
+                    filtering, and graphical insights, while maintaining a
+                    user-friendly interface and robust performance. This project
+                    not only fulfills its initial objectives but also lays a
+                    solid foundation for future enhancements, such as custom
+                    categories, advanced filters, and expanded authentication
+                    options. The project exemplifies a successful application of
+                    agile development principles and highlights the value of
+                    user-centric design in delivering a high-quality product.
+                  </p>
+                </div>
+                <hr></hr>
               </div>
             </section>
           </main>
