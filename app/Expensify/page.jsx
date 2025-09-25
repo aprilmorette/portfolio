@@ -494,45 +494,37 @@ export default function Page() {
 
             <section id="system-design" className="py-5">
               <h3 className="mb-15">System Design</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-15">
-                <div>
+              <div className="grid grid-cols-1 gap-15 mt-15 justify-items-center">
+                <div className="card p-5 max-w-[600px] text-center">
                   <h5>Architecture</h5>
                   <img
                     src="/architecture-diagram.png"
                     alt="Architecture Diagram"
-                    className="w-full h-auto rounded-md shadow-md"
+                    className="w-full h-auto rounded-md pt-5"
                   />
                 </div>
-                <div>
+                <div className="card p-5 max-w-[600px] text-center">
                   <h5>Component Diagram</h5>
                   <img
                     src="/component-diagram.png"
                     alt="Component Diagram"
-                    className="w-full h-auto rounded-md shadow-md"
+                    className="w-full h-auto rounded-md pt-5"
                   />
                 </div>
-                <div>
+                <div className="card p-5 max-w-[600px] text-center">
                   <h5>Activity Diagram</h5>
                   <img
                     src="/activity-diagram.png"
                     alt="Activity Diagram"
-                    className="w-full h-auto rounded-md shadow-md"
+                    className="w-full h-auto rounded-md pt-5"
                   />
                 </div>
-                <div>
+                <div className="card p-5 max-w-[600px] text-center">
                   <h5>Graphical User Interface</h5>
                   <img
                     src="/gui.png"
                     alt="Graphical User Interface"
-                    className="w-full h-auto rounded-md shadow-md"
-                  />
-                </div>
-                <div>
-                  <h5>Class Diagram</h5>
-                  <img
-                    src="/class-diagram.png"
-                    alt="Class Diagram"
-                    className="w-full h-auto rounded-md shadow-md"
+                    className="w-full h-auto rounded-md pt-5"
                   />
                 </div>
               </div>
@@ -552,7 +544,7 @@ export default function Page() {
               </p>
 
               <h5 className="my-5">Challenges</h5>
-              <div className="space-y-5">
+              <div className="space-y-15">
                 {/* challenge one */}
                 <div className="card p-5">
                   <p className="whitespace-pre-line">
@@ -722,7 +714,7 @@ export default function Page() {
                         same regardless of filtering.
                       </li>
                       <li className="list-[circle] ms-5">
-                        <b><i>Maintenance</i></b>: Update total amount when filters are
+                        <b><i>Maintenance</i></b> : Update total amount when filters are
                         applied or reset.
                       </li>
                     </div>
